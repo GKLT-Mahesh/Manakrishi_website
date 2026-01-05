@@ -139,6 +139,11 @@ function updateStory(step) {
         ease: "power2.out"
     });
 
+    // Update 3D Backgrounds
+    document.querySelectorAll('.story-bg').forEach(bg => bg.classList.remove('active'));
+    const activeBg = document.getElementById(`bg-${step}`);
+    if (activeBg) activeBg.classList.add('active');
+
     // Plant growth effect at step 2
     if (step === 2) {
         gsap.to(plantStem, {
@@ -202,3 +207,24 @@ gsap.to('.landing-drone', {
     yoyo: true,
     ease: "sine.inOut"
 });
+
+// 6. Newsletter Form Handling
+const newsletterForm = document.querySelector('.newsletter-form');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = newsletterForm.querySelector('button');
+        const originalContent = btn.innerHTML;
+
+        // Visual feedback
+        btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        btn.style.backgroundColor = '#4caf50';
+
+        // Reset after a few seconds
+        setTimeout(() => {
+            btn.innerHTML = originalContent;
+            btn.style.backgroundColor = '';
+            newsletterForm.reset();
+        }, 3000);
+    });
+}

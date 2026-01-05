@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manakrishi | The Future of Farming</title>
-    <meta name="description" content="Manakrishi connects intelligent drones with farmers to create a sustainable, high-yield agricultural ecosystem.">
-    
+    <meta name="description"
+        content="Manakrishi connects intelligent drones with farmers to create a sustainable, high-yield agricultural ecosystem.">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -36,7 +41,7 @@
             <div class="layer mountains"></div>
             <div class="layer fields"></div>
         </div>
-        
+
         <div class="hero-content">
             <h1 class="hero-title">
                 <span class="reveal-text">When Drones Speak</span><br>
@@ -51,30 +56,30 @@
             <svg viewBox="0 0 200 100" class="drone-svg">
                 <defs>
                     <filter id="glow-blue">
-                        <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                        <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
                         <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
+                            <feMergeNode in="coloredBlur" />
+                            <feMergeNode in="SourceGraphic" />
                         </feMerge>
                     </filter>
                 </defs>
                 <g class="drone-body">
                     <ellipse cx="100" cy="50" rx="40" ry="15" fill="#fff" />
-                    <circle cx="100" cy="50" r="8" fill="#00bcd4" filter="url(#glow-blue)" class="drone-core"/>
+                    <circle cx="100" cy="50" r="8" fill="#00bcd4" filter="url(#glow-blue)" class="drone-core" />
                     <!-- Arms -->
-                    <line x1="60" y1="50" x2="30" y2="30" stroke="#ccc" stroke-width="4"/>
-                    <line x1="140" y1="50" x2="170" y2="30" stroke="#ccc" stroke-width="4"/>
-                    <line x1="60" y1="50" x2="30" y2="70" stroke="#ccc" stroke-width="4"/>
-                    <line x1="140" y1="50" x2="170" y2="70" stroke="#ccc" stroke-width="4"/>
+                    <line x1="60" y1="50" x2="30" y2="30" stroke="#ccc" stroke-width="4" />
+                    <line x1="140" y1="50" x2="170" y2="30" stroke="#ccc" stroke-width="4" />
+                    <line x1="60" y1="50" x2="30" y2="70" stroke="#ccc" stroke-width="4" />
+                    <line x1="140" y1="50" x2="170" y2="70" stroke="#ccc" stroke-width="4" />
                     <!-- Rotors -->
-                    <ellipse cx="30" cy="30" rx="20" ry="4" fill="rgba(255,255,255,0.5)" class="rotor"/>
-                    <ellipse cx="170" cy="30" rx="20" ry="4" fill="rgba(255,255,255,0.5)" class="rotor"/>
-                    <ellipse cx="30" cy="70" rx="20" ry="4" fill="rgba(255,255,255,0.5)" class="rotor"/>
-                    <ellipse cx="170" cy="70" rx="20" ry="4" fill="rgba(255,255,255,0.5)" class="rotor"/>
+                    <ellipse cx="30" cy="30" rx="20" ry="4" fill="rgba(255,255,255,0.5)" class="rotor" />
+                    <ellipse cx="170" cy="30" rx="20" ry="4" fill="rgba(255,255,255,0.5)" class="rotor" />
+                    <ellipse cx="30" cy="70" rx="20" ry="4" fill="rgba(255,255,255,0.5)" class="rotor" />
+                    <ellipse cx="170" cy="70" rx="20" ry="4" fill="rgba(255,255,255,0.5)" class="rotor" />
                 </g>
                 <g class="drone-lights">
-                    <circle cx="40" cy="80" r="2" fill="red" class="blink-light"/>
-                    <circle cx="160" cy="80" r="2" fill="green" class="blink-light"/>
+                    <circle cx="40" cy="80" r="2" fill="red" class="blink-light" />
+                    <circle cx="160" cy="80" r="2" fill="green" class="blink-light" />
                 </g>
             </svg>
         </div>
@@ -84,6 +89,12 @@
     <section id="story" class="story-section">
         <div class="story-container">
             <div class="story-sticky">
+                <div class="story-bg-wrapper">
+                    <div class="story-bg active" id="bg-1" style="background-image: url('assets/story-1.png')"></div>
+                    <div class="story-bg" id="bg-2" style="background-image: url('assets/story-2.png')"></div>
+                    <div class="story-bg" id="bg-3" style="background-image: url('assets/story-3.png')"></div>
+                    <div class="story-overlay"></div>
+                </div>
                 <div class="drone-companion" id="story-drone">
                     <!-- Simplified Drone for tracking -->
                     <div class="mini-drone"></div>
@@ -91,13 +102,14 @@
                 <div class="particles-container" id="particles"></div>
                 <div class="plant-container">
                     <svg viewBox="0 0 100 200" class="plant-svg">
-                        <path d="M50 200 Q50 150 50 100 Q30 70 20 50" stroke="#4caf50" stroke-width="4" fill="none" class="stem"/>
+                        <path d="M50 200 Q50 150 50 100 Q30 70 20 50" stroke="#4caf50" stroke-width="4" fill="none"
+                            class="stem" />
                         <path d="M50 100 Q70 70 80 50" stroke="#4caf50" stroke-width="4" fill="none" class="stem" />
                         <circle cx="50" cy="200" r="5" fill="#5d4037" />
                     </svg>
                 </div>
             </div>
-            
+
             <div class="story-text-blocks">
                 <div class="story-block" data-step="1">
                     <h2>The Drone Listens</h2>
@@ -193,20 +205,137 @@
         </div>
     </section>
 
-    <!-- Footer / CTA -->
-    <footer class="footer-cta">
+    <!-- Team / Partnership Section -->
+    <section id="partnership" class="team-section">
+        <h2 class="section-title">Visionaries & Partners</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-img-wrapper">
+                    <img src="assets/team-founder.png" alt="Founder" class="team-img">
+                </div>
+                <div class="team-info">
+                    <h3>Dr. Arjun Rao</h3>
+                    <p class="role">Founder</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img-wrapper">
+                    <img src="assets/team-ceo.png" alt="CEO" class="team-img">
+                </div>
+                <div class="team-info">
+                    <h3>Sarah Mehta</h3>
+                    <p class="role">CEO</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img-wrapper">
+                    <img src="assets/team-cto.png" alt="CTO" class="team-img">
+                </div>
+                <div class="team-info">
+                    <h3>Vikram Singh</h3>
+                    <p class="role">CTO</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img-wrapper">
+                    <img src="assets/team-cfo.png" alt="CFO" class="team-img">
+                </div>
+                <div class="team-info">
+                    <h3>Ananya Gupta</h3>
+                    <p class="role">CFO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
         <div class="cta-content">
             <h2>Ready to Transform Your Farm?</h2>
             <button class="cta-large">Get Started with Manakrishi</button>
         </div>
         <div class="drone-landing">
-            <!-- Drone silouhette landing -->
+            <!-- Drone silhouette landing -->
             <svg class="landing-drone" viewBox="0 0 100 50">
-                <path d="M10 25 L90 25 M30 25 L20 40 M70 25 L80 40" stroke="#fff" stroke-width="2"/>
+                <path d="M10 25 L90 25 M30 25 L20 40 M70 25 L80 40" stroke="#fff" stroke-width="2" />
             </svg>
         </div>
-        <div class="footer-links">
-            <p>&copy; 2025 Manakrishi Technologies. All rights reserved.</p>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">Manakrishi<span class="dot">.</span></div>
+                    <p class="brand-desc">Connecting intelligent drones with farmers to create a sustainable, high-yield
+                        agricultural ecosystem.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.225-.149-4.771-1.664-4.919-4.919-.058-1.265-.069-1.644-.069-4.849 0-3.204.012-3.584.069-4.849.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-widget">
+                    <h4>Company</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#impact">Impact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget">
+                    <h4>Contact</h4>
+                    <ul class="footer-info">
+                        <li>123 Agritech Valley, New Delhi</li>
+                        <li><a href="mailto:hello@manakrishi.com">hello@manakrishi.com</a></li>
+                        <li>+91 98765 43210</li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget newsletter-widget">
+                    <h4>Newsletter</h4>
+                    <p>Farming intelligence, delivered.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" aria-label="Subscribe">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Manakrishi Technologies. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -215,4 +344,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

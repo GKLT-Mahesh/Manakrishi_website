@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="none">
+    <defs>
+        <linearGradient id="scanGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#00bcd4" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#00bcd4" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Perspective Grid -->
+    <path d="M20 120 L50 80 L150 80 L180 120" stroke="#2d5a27" stroke-width="1" fill="url(#scanGradient)"/>
+    <line x1="50" y1="80" x2="150" y2="80" stroke="#00bcd4" stroke-width="2"/>
+    <line x1="20" y1="120" x2="180" y2="120" stroke="#00bcd4" stroke-width="2"/>
+    
+    <!-- Vertical Bars (Data) -->
+    <rect x="60" y="60" width="10" height="20" fill="#4caf50">
+        <animate attributeName="height" values="20;40;20" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="60;40;60" dur="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="95" y="40" width="10" height="40" fill="#ffb300">
+        <animate attributeName="height" values="40;50;40" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="40;30;40" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="130" y="50" width="10" height="30" fill="#00bcd4"/>
+
+    <!-- Scanning Line -->
+    <line x1="50" y1="80" x2="50" y2="120" stroke="#fff" stroke-width="2" opacity="0.8">
+        <animate attributeName="x1" values="20;180;20" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="20;180;20" dur="3s" repeatCount="indefinite"/>
+    </line>
+</svg>

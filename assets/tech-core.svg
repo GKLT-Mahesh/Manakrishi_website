@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+    <defs>
+        <radialGradient id="coreWithGlow" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="40%" stop-color="#00bcd4"/>
+            <stop offset="100%" stop-color="#00bcd4" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+        </filter>
+        <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e0ffff"/>
+            <stop offset="100%" stop-color="#00bcd4"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Outer Rotating Rings -->
+    <g opacity="0.6">
+        <circle cx="200" cy="200" r="180" stroke="#00bcd4" stroke-width="1" stroke-dasharray="10 5" fill="none">
+            <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="20s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="200" cy="200" r="160" stroke="#00bcd4" stroke-width="2" stroke-dasharray="50 30" fill="none">
+            <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="15s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- Central Hex Structure (3D Cube like) -->
+    <g transform="translate(200 200)">
+        <path d="M0 -60 L52 -30 L52 30 L0 60 L-52 30 L-52 -30 Z" fill="url(#coreWithGlow)" opacity="0.3" stroke="#00bcd4" stroke-width="2"/>
+        
+        <!-- Inner Cube Lines for 3D effect -->
+        <path d="M0 -60 L0 0 M52 -30 L0 0 M-52 -30 L0 0 M0 60 L0 0" stroke="#fff" stroke-width="3" opacity="0.8"/>
+        
+        <!-- Pulsing Core -->
+        <circle cx="0" cy="0" r="15" fill="#fff" filter="url(#glow)">
+            <animate attributeName="r" values="15;20;15" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- Floating Particles -->
+    <circle cx="100" cy="100" r="2" fill="#fff">
+        <animate attributeName="cy" values="100;120;100" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="300" r="3" fill="#00bcd4">
+         <animate attributeName="cy" values="300;280;300" dur="3s" repeatCount="indefinite"/>
+    </circle>
+</svg>

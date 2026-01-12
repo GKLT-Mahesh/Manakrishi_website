@@ -112,3 +112,161 @@
         font-size: 2.5rem;
     }
 }
+
+/* Enhanced Mobile Responsiveness */
+
+@media (max-width: 768px) {
+
+    /* Navigation Adjustments */
+    .nav-actions {
+        gap: 0.8rem;
+    }
+
+    .cta-small {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    #lang-btn {
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Move 'Join Revolution' to menu on smaller screens if crowded, 
+       but for now just resize. Or hide text if needed. */
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-content {
+        padding: 0 5%;
+    }
+
+    .hero-content .cta-pulse {
+        display: block;
+        margin: 1rem auto;
+        width: 80%;
+        text-align: center;
+    }
+
+    /* Reset margin for the second button since we are stacking them */
+    .hero-content .cta-pulse[style*="margin-left"] {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Booking Page Mobile */
+    .booking-section {
+        padding: 100px 5% 30px;
+    }
+
+    .booking-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .booking-container .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Team Cards */
+    .team-grid {
+        gap: 2rem;
+    }
+
+    .team-card {
+        width: 100%;
+        /* Full width cards on mobile */
+        max-width: 350px;
+    }
+
+    .team-card.text-only {
+        min-height: 150px;
+    }
+
+    /* Story Section */
+    .story-sticky {
+        position: relative;
+        height: 50vh;
+        width: 100%;
+        top: 0;
+    }
+
+    .story-text-blocks {
+        width: 100%;
+        padding: 2rem 5%;
+    }
+
+    .story-block {
+        height: auto;
+        opacity: 1;
+        margin-bottom: 3rem;
+        border-left: 2px solid var(--color-secondary);
+        padding-left: 1rem;
+    }
+
+    /* Tech Section */
+    .tech-interface {
+        flex-direction: column;
+    }
+
+    .tech-panel {
+        margin: 1rem 0;
+    }
+
+    .tech-center {
+        margin: 2rem 0;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .footer-widget,
+    .footer-brand {
+        width: 100%;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-actions .cta-small {
+        display: none;
+        /* Hide 'Join' button on very small screens, keep hamburger and theme/lang */
+    }
+
+    /* Ensure the hamburger is visible even if CTA is hidden */
+    .mobile-menu-btn {
+        margin-left: auto;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    /* Floating Icons */
+    .floating-quick-links {
+        right: 15px;
+        bottom: 30px;
+    }
+
+    .icon-box {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-box svg {
+        width: 24px;
+        height: 24px;
+    }
+}

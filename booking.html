@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Service | Manakrishi</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo" onclick="window.location.href='index.html'">Manakrishi<span class="dot">.</span></div>
+        <div class="nav-links">
+            <a href="index.html" data-i18n="nav-home">Home</a>
+            <a href="index.html#story" data-i18n="nav-story">Our Story</a>
+            <a href="index.html#how-it-works" data-i18n="nav-how">How It Works</a>
+        </div>
+        <div class="nav-actions">
+            <!-- Theme Toggle can remain if JS supports it on this page, simplified for now -->
+            <button class="cta-small" onclick="toggleLanguage()" id="lang-btn"
+                style="background: transparent; border: 1px solid var(--color-secondary); color: var(--color-secondary);">
+                <span id="lang-btn-text">తెలుగు</span>
+            </button>
+            <a href="https://wa.me/918886124318" target="_blank" class="cta-small"
+                data-i18n="nav-booking-contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Booking Form Section -->
+    <section class="booking-section">
+        <div class="booking-container">
+            <h1 class="section-title" data-i18n="book-title">Book Drone Spraying</h1>
+            <p class="booking-subtitle" data-i18n="book-subtitle">Fill in the details below to schedule a service for
+                your farm.</p>
+
+            <form class="booking-form" action="#" method="POST"
+                onsubmit="event.preventDefault(); alert(translations[localStorage.getItem('manakrishi_lang') || 'en']['alert-booked']);">
+                <div class="form-group">
+                    <label for="fullname" data-i18n="lbl-fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required
+                        class="form-input" data-i18n="ph-fullname">
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile" data-i18n="lbl-mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number"
+                        pattern="[0-9]{10}" required class="form-input" data-i18n="ph-mobile">
+                </div>
+
+                <div class="form-group">
+                    <label for="village" data-i18n="lbl-village">Village / Location</label>
+                    <input type="text" id="village" name="village" placeholder="Enter your village name" required
+                        class="form-input" data-i18n="ph-village">
+                </div>
+
+                <div class="form-group">
+                    <label for="crop" data-i18n="lbl-crop">Crop Type</label>
+                    <input type="text" id="crop" name="crop" placeholder="E.g., Paddy, Cotton, Chilli" required
+                        class="form-input" data-i18n="ph-crop">
+                </div>
+
+                <div class="form-group">
+                    <label for="acres" data-i18n="lbl-acres">Total Acres</label>
+                    <input type="number" id="acres" name="acres" placeholder="Number of acres" class="form-input"
+                        data-i18n="ph-acres">
+                </div>
+
+                <button type="submit" class="submit-btn cta-pulse" data-i18n="btn-confirm">Confirm Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p data-i18n="footer-rights">&copy; 2026 Manakrishi Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="language.js"></script>
+</body>
+
+</html>

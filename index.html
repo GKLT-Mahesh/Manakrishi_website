@@ -17,6 +17,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
@@ -25,10 +26,10 @@
     <nav class="glass-nav">
         <div class="logo">Manakrishi<span class="dot">.</span></div>
         <div class="nav-links">
-            <a href="#story">Our Story</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#technology">Technology</a>
-            <a href="#impact">Impact</a>
+            <a href="#story" data-i18n="nav-story">Our Story</a>
+            <a href="#how-it-works" data-i18n="nav-how">How It Works</a>
+            <a href="#technology" data-i18n="nav-tech">Technology</a>
+            <a href="#impact" data-i18n="nav-impact">Impact</a>
         </div>
         <div class="nav-actions">
             <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" class="theme-btn">
@@ -50,7 +51,12 @@
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
             </button>
-            <a href="https://wa.me/918886124318" target="_blank" class="cta-small">Join the Revolution</a>
+            <button class="cta-small" onclick="toggleLanguage()" id="lang-btn"
+                style="background: transparent; border: 1px solid var(--color-secondary); color: var(--color-secondary);">
+                <span id="lang-btn-text">తెలుగు</span>
+            </button>
+            <a href="https://wa.me/918886124318" target="_blank" class="cta-small" data-i18n="nav-contact">Join the
+                Revolution</a>
             <button class="mobile-menu-btn" aria-label="Toggle Menu">
                 <span></span>
                 <span></span>
@@ -75,6 +81,9 @@
             </h1>
             <p class="hero-subtitle">Creating a dialogue between technology and nature to feed the future.</p>
             <a href="#story" class="cta-pulse">Discover the Ecosystem</a>
+            <a href="booking.html" class="cta-pulse"
+                style="margin-left: 1rem; background: var(--color-primary); border-color: var(--color-primary); color: white;">Book
+                Spraying</a>
 
         </div>
 
@@ -108,16 +117,18 @@
 
             <div class="story-text-blocks">
                 <div class="story-block" data-step="1">
-                    <h2>The Drone Listens</h2>
-                    <p>High-precision sensors analyze soil moisture and crop health in real-time.</p>
+                    <h2 data-i18n="story-1-h">The Drone Listens</h2>
+                    <p data-i18n="story-1-p">High-precision sensors analyze soil moisture and crop health in real-time.
+                    </p>
                 </div>
                 <div class="story-block" data-step="2">
-                    <h2>The Farm Responds</h2>
-                    <p>Hungry crops signal their need for nutrients. The ecosystem is alive.</p>
+                    <h2 data-i18n="story-2-h">The Farm Responds</h2>
+                    <p data-i18n="story-2-p">Hungry crops signal their need for nutrients. The ecosystem is alive.</p>
                 </div>
                 <div class="story-block" data-step="3">
-                    <h2>Precision Delivery</h2>
-                    <p>Micro-doses of Urea and Water are deployed exactly where needed. Zero waste.</p>
+                    <h2 data-i18n="story-3-h">Precision Delivery</h2>
+                    <p data-i18n="story-3-p">Micro-doses of Urea and Water are deployed exactly where needed. Zero
+                        waste.</p>
                 </div>
             </div>
         </div>
@@ -125,43 +136,43 @@
 
     <!-- How It Works -->
     <section id="how-it-works" class="steps-section">
-        <h2 class="section-title">The Cycle of Intelligence</h2>
+        <h2 class="section-title" data-i18n="hiw-title">The Cycle of Intelligence</h2>
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-icon">👨‍🌾</div>
-                <h3>1. Farmer Request</h3>
-                <p>Simple booking via the Manakrishi App.</p>
+                <h3 data-i18n="step-1-h">1. Farmer Request</h3>
+                <p data-i18n="step-1-p">Simple booking via the Manakrishi App.</p>
             </div>
             <div class="step-arrow">→</div>
             <div class="step-card">
                 <div class="step-icon">🚁</div>
-                <h3>2. Drone Deploys</h3>
-                <p>Autonomous flight path optimization.</p>
+                <h3 data-i18n="step-2-h">2. Drone Deploys</h3>
+                <p data-i18n="step-2-p">Autonomous flight path optimization.</p>
             </div>
             <div class="step-arrow">→</div>
             <div class="step-card">
                 <div class="step-icon">💧</div>
-                <h3>3. Precision Spray</h3>
-                <p>Targeted nutrient and pesticide application.</p>
+                <h3 data-i18n="step-3-h">3. Precision Spray</h3>
+                <p data-i18n="step-3-p">Targeted nutrient and pesticide application.</p>
             </div>
             <div class="step-arrow">→</div>
             <div class="step-card">
                 <div class="step-icon">🌾</div>
-                <h3>4. Growth & Yield</h3>
-                <p>Healthier crops, higher profits.</p>
+                <h3 data-i18n="step-4-h">4. Growth & Yield</h3>
+                <p data-i18n="step-4-p">Healthier crops, higher profits.</p>
             </div>
         </div>
     </section>
 
     <!-- Technology -->
     <section id="technology" class="tech-section">
-        <h2 class="section-title">Behind the Intelligence</h2>
+        <h2 class="section-title" data-i18n="tech-title">Behind the Intelligence</h2>
         <div class="tech-interface">
             <div class="tech-panel left">
                 <div class="hud-element">
-                    <h4>Sensor Array</h4>
+                    <h4 data-i18n="tech-sensor-h">Sensor Array</h4>
                     <img src="assets/tech-sensor.svg" alt="Sensor Data Visualization" class="tech-svg">
-                    <p class="tech-detail">Multispectral Imaging</p>
+                    <p class="tech-detail" data-i18n="tech-sensor-p">Multispectral Imaging</p>
                 </div>
             </div>
             <div class="tech-center">
@@ -172,9 +183,9 @@
             </div>
             <div class="tech-panel right">
                 <div class="hud-element">
-                    <h4>Spray Efficiency</h4>
+                    <h4 data-i18n="tech-spray-h">Spray Efficiency</h4>
                     <img src="assets/tech-gauge.svg" alt="Efficiency Gauge" class="tech-svg">
-                    <p class="tech-detail">Navigate & distribute</p>
+                    <p class="tech-detail" data-i18n="tech-spray-p">Navigate & distribute</p>
                 </div>
             </div>
         </div>
@@ -182,7 +193,7 @@
 
     <!-- Support & Schemes Section -->
     <section id="schemes" class="schemes-section">
-        <h2 class="section-title">Security & Support for Every Farmer</h2>
+        <h2 class="section-title" data-i18n="schemes-title">Security & Support for Every Farmer</h2>
         <div class="schemes-container">
             <div class="scheme-card">
                 <div class="scheme-img-wrapper">
@@ -190,9 +201,10 @@
                         class="scheme-img">
                 </div>
                 <div class="scheme-content">
-                    <h3>Secure Your Future</h3>
+                    <h3 data-i18n="scheme-1-h">Secure Your Future</h3>
                     <div class="price-tag">₹399 / Year</div>
-                    <p>Comprehensive coverage with the Post Office Insurance Scheme. Accessible, affordable, and
+                    <p data-i18n="scheme-1-p">Comprehensive coverage with the Post Office Insurance Scheme. Accessible,
+                        affordable, and
                         reliable protection for you and your family.</p>
                 </div>
             </div>
@@ -202,8 +214,9 @@
                     <img src="assets/scheme-govt.png" alt="Government Schemes for Farmers" class="scheme-img">
                 </div>
                 <div class="scheme-content">
-                    <h3>Unlock Government Benefits</h3>
-                    <p>We help you navigate and apply for essential government schemes like PM-Kisan, Soil Health Cards,
+                    <h3 data-i18n="scheme-2-h">Unlock Government Benefits</h3>
+                    <p data-i18n="scheme-2-p">We help you navigate and apply for essential government schemes like
+                        PM-Kisan, Soil Health Cards,
                         and Crop Insurance to maximize your benefits.</p>
                 </div>
             </div>
@@ -211,32 +224,34 @@
 
         <!-- Farmer Impact -->
         <section id="impact" class="impact-section">
-            <h2 class="section-title">Empowering the Hands that Feed</h2>
+            <h2 class="section-title" data-i18n="impact-title">Empowering the Hands that Feed</h2>
             <div class="impact-cards">
                 <div class="impact-card">
                     <h3 class="counter" data-target="30">0</h3><span>%</span>
-                    <p>Cost Reduction</p>
+                    <p data-i18n="impact-cost">Cost Reduction</p>
                 </div>
                 <div class="impact-card">
                     <h3 class="counter" data-target="50">0</h3><span>%</span>
-                    <p>Time Saved</p>
+                    <p data-i18n="impact-time">Time Saved</p>
                 </div>
                 <div class="impact-card">
                     <h3>100%</h3>
-                    <p>Health Safety</p>
+                    <p data-i18n="impact-safe">Health Safety</p>
                 </div>
             </div>
         </section>
 
         <!-- Vision & Mission Section -->
         <section id="vision" class="vision-section">
-            <h2 class="section-title">Our Vision & Mission</h2>
+            <h2 class="section-title" data-i18n="vision-title">Our Vision & Mission</h2>
             <div class="vision-container">
                 <div class="vision-card">
-                    <h3>Our Vision</h3>
-                    <p class="vision-lead">To become India’s most trusted drone-enabled agriculture service platform,
+                    <h3 data-i18n="vision-h">Our Vision</h3>
+                    <p class="vision-lead" data-i18n="vision-p1">To become India’s most trusted drone-enabled
+                        agriculture service platform,
                         empowering farmers with smart technology, sustainable practices, and higher incomes.</p>
-                    <p>We envision a future where every farmer, regardless of location or land size, has access to
+                    <p data-i18n="vision-p2">We envision a future where every farmer, regardless of location or land
+                        size, has access to
                         modern,
                         precision farming tools that reduce effort, cut costs, and improve crop yields.</p>
                 </div>
@@ -255,32 +270,37 @@
                 </div>
 
                 <div class="mission-wrapper">
-                    <h3>🚜 Our Mission</h3>
+                    <h3 data-i18n="mission-h">🚜 Our Mission</h3>
                     <div class="mission-grid">
                         <div class="mission-item">
-                            <h4>Technology for All</h4>
-                            <p>Bring advanced farming technology to rural India. Make drone-based services accessible,
+                            <h4 data-i18n="mission-1-h">Technology for All</h4>
+                            <p data-i18n="mission-1-p">Bring advanced farming technology to rural India. Make
+                                drone-based services accessible,
                                 reliable, and easy to use for every farmer.</p>
                         </div>
                         <div class="mission-item">
-                            <h4>Cost-Effective Solutions</h4>
-                            <p>Support farmers by reducing input costs, saving time, and minimizing wastage through
+                            <h4 data-i18n="mission-2-h">Cost-Effective Solutions</h4>
+                            <p data-i18n="mission-2-p">Support farmers by reducing input costs, saving time, and
+                                minimizing wastage through
                                 efficient drone spraying and monitoring.</p>
                         </div>
                         <div class="mission-item">
-                            <h4>Sustainable Agriculture</h4>
-                            <p>Promote safe practices by encouraging responsible use of water, fertilizers, and
+                            <h4 data-i18n="mission-3-h">Sustainable Agriculture</h4>
+                            <p data-i18n="mission-3-p">Promote safe practices by encouraging responsible use of water,
+                                fertilizers, and
                                 pesticides
                                 with precision-driven methods.</p>
                         </div>
                         <div class="mission-item">
-                            <h4>Productivity & Income</h4>
-                            <p>Improve farmer productivity to help them achieve better crop health, higher yields, and
+                            <h4 data-i18n="mission-4-h">Productivity & Income</h4>
+                            <p data-i18n="mission-4-p">Improve farmer productivity to help them achieve better crop
+                                health, higher yields, and
                                 long-term financial stability.</p>
                         </div>
                         <div class="mission-item full-width">
-                            <h4>Trust & Quality</h4>
-                            <p>Build trust through transparency. Deliver consistent, safe, and farmer-first services
+                            <h4 data-i18n="mission-5-h">Trust & Quality</h4>
+                            <p data-i18n="mission-5-p">Build trust through transparency. Deliver consistent, safe, and
+                                farmer-first services
                                 backed
                                 by trained operators and reliable technology.</p>
                         </div>
@@ -311,24 +331,7 @@
                         <p class="role">CFO</p>
                     </div>
                 </div>
-                <div class="team-card">
-                    <div class="team-img-wrapper">
-                        <img src="assets/dilip.jpg" alt="CTO" class="team-img">
-                    </div>
-                    <div class="team-info">
-                        <h3>Maddipatla dilip sai</h3>
-                        <p class="role">CTO</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-img-wrapper">
-                        <img src="assets/Mahesh.png" alt="CFO" class="team-img">
-                    </div>
-                    <div class="team-info">
-                        <h3>Bakki Mahesh</h3>
-                        <p class="role">COO</p>
-                    </div>
-                </div>
+
             </div>
         </section>
 
@@ -336,7 +339,8 @@
         <section class="cta-section">
             <div class="cta-content">
                 <h2>Ready to Transform Your Farm?</h2>
-                <button class="cta-large">Get Started with Manakrishi</button>
+                <button class="cta-large" onclick="window.location.href='booking.html'">Book Drone Spraying
+                    Service</button>
             </div>
             <div class="drone-landing">
                 <!-- Drone silhouette landing -->
@@ -433,6 +437,7 @@
         </footer>
 
         <!-- Scripts -->
+        <script src="language.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
         <!-- Floating Global Icons -->

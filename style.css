@@ -169,7 +169,8 @@ body.light-mode .theme-btn {
     background: var(--color-secondary);
     border-color: var(--color-secondary);
     color: #fff;
-    transform: rotate(180deg);
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 0 0 15px var(--color-secondary);
 }
 
 .theme-btn svg {
@@ -222,8 +223,10 @@ body.light-mode .theme-btn {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* Use the generated background image */
-    background: url('assets/main.png') no-repeat center center/cover;
+    /* Use the uploaded real-world image */
+    background: url('assets/hero-bg.jpg') no-repeat center 15%/cover;
+    background-attachment: fixed;
+    /* Parallax feel */
 }
 
 /* Overlay to ensure text readability on top of image */
@@ -233,8 +236,8 @@ body.light-mode .theme-btn {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 22, 16, 0.4);
-    /* Dark overlay */
+    /* Stronger gradient for better text contrast */
+    background: linear-gradient(180deg, rgba(15, 22, 16, 0.7) 0%, rgba(15, 22, 16, 0.4) 50%, rgba(15, 22, 16, 0.9) 100%);
     z-index: 0;
 }
 
@@ -258,16 +261,17 @@ body.light-mode .theme-btn {
     position: relative;
     z-index: 2;
     text-align: center;
-    max-width: 800px;
-    margin-top: -50px;
+    max-width: 900px;
+    margin-top: 20vh;
+    /* Push text down to reveal drone in the sky */
 }
 
 .hero-title {
-    font-size: 4rem;
-    line-height: 1.1;
+    font-size: 2.8rem;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
     color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 .hero-title .highlight {
@@ -283,8 +287,8 @@ body.light-mode .theme-btn {
     font-size: 1.2rem;
     color: #e2e8f0;
     margin-bottom: 2.5rem;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
-    max-width: 600px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -300,12 +304,31 @@ body.light-mode .theme-btn {
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
 }
 
-.cta-pulse:hover {
+.cta-pulse::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
     background: var(--color-secondary);
-    color: #000;
-    box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.cta-pulse:hover::before {
+    width: 100%;
+}
+
+
+.cta-pulse:hover {
+    color: #0f1610;
+    box-shadow: 0 0 25px rgba(0, 188, 212, 0.6);
+    transform: translateY(-3px);
 }
 
 .drone-container {
@@ -318,6 +341,78 @@ body.light-mode .theme-btn {
     z-index: 1;
     pointer-events: none;
     opacity: 0.6;
+}
+
+/* Quick Action Buttons */
+/* Floating Quick Action Buttons */
+.floating-quick-links {
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column-reverse;
+    /* Stack upwards from bottom */
+    gap: 1.5rem;
+    z-index: 1000;
+}
+
+.quick-link-btn {
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icon-box {
+    width: 60px;
+    /* Increased Size */
+    height: 60px;
+    background: rgba(15, 22, 16, 0.4);
+    /* Darker semi-transparent bg */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.icon-box svg {
+    width: 30px;
+    /* Increased Icon Size */
+    height: 30px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.quick-link-btn:hover .icon-box {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.4);
+}
+
+.quick-link-btn:hover .icon-box svg {
+    color: #000;
+}
+
+/* Specific styling for WhatsApp to look like the 'Real' App Icon */
+.quick-link-btn[href*="wa.me"] .icon-box {
+    background: #25D366;
+    /* Official WhatsApp Green */
+    border-color: #25D366;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.quick-link-btn[href*="wa.me"] .icon-box svg {
+    color: #fff;
+    fill: #fff;
+}
+
+.quick-link-btn[href*="wa.me"]:hover .icon-box {
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+    transform: translateY(-5px) scale(1.1);
 }
 
 /* Story Section */
@@ -409,6 +504,7 @@ body.light-mode .theme-btn {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--color-secondary);
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
 }
 
 .story-block p {
@@ -1156,9 +1252,9 @@ body.light-mode .theme-btn {
 
 .vision-image-wrapper {
     flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    height: 350px;
+    min-width: 280px;
+    max-width: 350px;
+    height: 400px;
     border-radius: 20px;
     overflow: hidden;
     position: relative;

@@ -265,3 +265,16 @@ window.addEventListener('scroll', () => {
         nav.classList.remove('scrolled');
     }
 });
+
+// 9. Vision Gallery Staggered Reveal
+gsap.from('.vision-image-wrapper', {
+    scrollTrigger: {
+        trigger: '.vision-gallery',
+        start: "top 80%"
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power2.out"
+});

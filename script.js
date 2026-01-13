@@ -278,3 +278,18 @@ gsap.from('.vision-image-wrapper', {
     stagger: 0.3,
     ease: "power2.out"
 });
+
+// 10. Leadership Section Reveal - DISABLED to Fix Visibility Issues
+/*
+gsap.from('.leader-row', {
+    scrollTrigger: {
+        trigger: '.leadership-section',
+        start: "top 75%"
+    },
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power2.out"
+});
+*/

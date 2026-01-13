@@ -18,6 +18,9 @@ if (!firebase.apps.length) {
 // Initialize Firestore
 const db = firebase.firestore();
 
+// TODO: REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGHnnn6GiKYCbMgraKofdbhU8ZaVMBav89Y-xKu63OLp5z-y4O1F9eDhGQ4I9Qn9do/exec";
+
 document.addEventListener('DOMContentLoaded', () => {
     const bookingForm = document.querySelector('.booking-form');
     // Remove the inline onsubmit
@@ -44,9 +47,32 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                // Add a new document using Compat syntax
+                // 1. Add to Firebase
                 const docRef = await db.collection("bookings").add(formData);
                 console.log("Document written with ID: ", docRef.id);
+
+                // 2. Send to Google Sheets (if URL is configured)
+                // 2. Send to Google Sheets (if URL is configured)
+                if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "https://script.google.com/macros/s/AKfycbyGHnnn6GiKYCbMgraKofdbhU8ZaVMBav89Y-xKu63OLp5z-y4O1F9eDhGQ4I9Qn9do/execE") {
+
+                    // Create a clean object for the Sheet (exclude Firebase specific objects like timestamp)
+                    const sheetData = {
+                        fullname: formData.fullname,
+                        mobile: formData.mobile,
+                        village: formData.village,
+                        crop: formData.crop,
+                        acres: formData.acres
+                    };
+
+                    fetch(GOOGLE_SCRIPT_URL, {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: {
+                            "Content-Type": "text/plain"
+                        },
+                        body: JSON.stringify(sheetData)
+                    }).catch(err => console.error("Error sending to Google Sheet:", err));
+                }
 
                 // Get success message based on language
                 const currentLang = localStorage.getItem('manakrishi_lang') || 'en';

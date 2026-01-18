@@ -24,6 +24,19 @@ const translations = {
         "hiw-title": "The Cycle of Intelligence",
         "step-1-h": "1. Farmer Request",
         "step-1-p": "Simple booking via the Manakrishi App.",
+
+        "gallery-title": "Field Operations",
+        "gallery-chilli": "Chilli",
+        "gallery-cotton": "Cotton",
+        "gallery-sugarcane": "Sugar Cane",
+
+        "about-title": "About Manakrishi",
+        "about-desc": "Manakrishi is revolutionizing agriculture by bringing precision drone spraying services to every farmer's doorstep. We combine advanced drone technology with expert agronomy to effectively spray fertilizers and pesticides, reducing waste and ensuring safety. Our mission is to make smart farming accessible, affordable, and sustainable for all.",
+        "about-point-1": "Eco-friendly Precision Spraying",
+        "about-point-2": "Time & Cost Efficient",
+        "about-point-3": "Farmer Safety First",
+        "about-badge": "Smart Farming",
+
         "step-2-h": "2. Drone Deploys",
         "step-2-p": "Autonomous flight path optimization.",
         "step-3-h": "3. Precision Spray",
@@ -121,6 +134,19 @@ const translations = {
         "step-1-h": "1. రైతు అభ్యర్థన",
         "step-1-p": "మనకృషి యాప్ ద్వారా సులభమైన బుకింగ్.",
         "step-2-h": "2. డ్రోన్ బయలుదేరుతుంది",
+
+        "gallery-title": "క్షేత్ర కార్యకలాపాలు (Field Operations)",
+        "gallery-chilli": "మిరప (Chilli)",
+        "gallery-cotton": "పత్తి (Cotton)",
+        "gallery-sugarcane": "చెరకు (Sugar Cane)",
+
+        "about-title": "మనకృషి గురించి",
+        "about-desc": "ప్రతి రైతు ముంగిట ఖచ్చితమైన డ్రోన్ స్ప్రేయింగ్ సేవలను తీసుకురావడం ద్వారా మనకృషి వ్యవసాయంలో విప్లవాత్మక మార్పులు చేస్తోంది. ఎరువులు మరియు పురుగుమందులను సమర్థవంతంగా పిచికారీ చేయడానికి, వృధాను తగ్గించడానికి మరియు భద్రతను నిర్ధారించడానికి మేము నిపుణులైన వ్యవసాయ శాస్త్రంతో అధునాతన డ్రోన్ సాంకేతికతను మిళితం చేస్తాము. స్మార్ట్ వ్యవసాయాన్ని అందరికీ అందుబాటులో, సరసమైన మరియు స్థిరమైనదిగా చేయడమే మా లక్ష్యం.",
+        "about-point-1": "పర్యావరణ అనుకూల ఖచ్చితమైన స్ప్రేయింగ్",
+        "about-point-2": "సమయం & ఖర్చు ఆదా",
+        "about-point-3": "రైతు భద్రత మొదట",
+        "about-badge": "స్మార్ట్ ఫార్మింగ్",
+
         "step-2-p": "స్వయంప్రతిపత్త విమాన మార్గ ఆప్టిమైజేషన్.",
         "step-3-h": "3. ఖచ్చితమైన స్ప్రే",
         "step-3-p": "లక్ష్య పోషక మరియు పురుగుమందుల అప్లికేషన్.",

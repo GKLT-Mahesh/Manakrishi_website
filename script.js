@@ -293,3 +293,38 @@ gsap.from('.leader-row', {
     ease: "power2.out"
 });
 */
+
+// 11. Service Modal Logic
+const serviceFab = document.getElementById('service-fab');
+const serviceModal = document.getElementById('service-modal');
+const modalClose = document.querySelector('.modal-close');
+const modalOverlay = document.querySelector('.modal-overlay');
+
+if (serviceFab && serviceModal) {
+    serviceFab.addEventListener('click', () => {
+        serviceModal.classList.add('active');
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = 'hidden';
+    });
+
+    const closeModal = () => {
+        serviceModal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    modalClose.addEventListener('click', closeModal);
+
+    // Close on click outside
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && serviceModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}

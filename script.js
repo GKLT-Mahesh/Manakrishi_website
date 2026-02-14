@@ -104,68 +104,9 @@ gsap.from('.reveal-text', {
     delay: 0.5
 });
 
-// 2. Story Section Interactions
-const storyBlocks = document.querySelectorAll('.story-block');
-const companionDrone = document.querySelector('.drone-companion');
-const plantStem = document.querySelectorAll('.stem');
 
-// Pin the left side (visuals) while scrolling text
-ScrollTrigger.create({
-    trigger: ".story-section",
-    start: "top top",
-    end: "bottom bottom",
-    pin: ".story-sticky",
-    scrub: 1
-});
 
-// Animate text blocks and update visual state
-storyBlocks.forEach((block, i) => {
-    ScrollTrigger.create({
-        trigger: block,
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => updateStory(i + 1),
-        onEnterBack: () => updateStory(i + 1),
-        toggleClass: "active"
-    });
-});
 
-function updateStory(step) {
-    // Move Drone Companion based on step
-    const positions = [20, 50, 80]; // Top percentages
-    gsap.to(companionDrone, {
-        top: positions[step - 1] + "%",
-        duration: 1,
-        ease: "power2.out"
-    });
-
-    // Update 3D Backgrounds
-    document.querySelectorAll('.story-bg').forEach(bg => bg.classList.remove('active'));
-    const activeBg = document.getElementById(`bg-${step}`);
-    if (activeBg) activeBg.classList.add('active');
-
-    // Plant growth effect at step 2
-    if (step === 2) {
-        gsap.to(plantStem, {
-            strokeDashoffset: 0,
-            duration: 2,
-            opacity: 1,
-            stroke: "#4caf50"
-        });
-    }
-
-    // Spray effect at step 3
-    if (step === 3) {
-        pulseDroneEffect();
-    }
-}
-
-function pulseDroneEffect() {
-    gsap.fromTo(companionDrone,
-        { boxShadow: "0 0 0px var(--color-secondary)" },
-        { boxShadow: "0 0 50px var(--color-secondary)", duration: 0.5, yoyo: true, repeat: 3 }
-    );
-}
 
 // 3. Impact Counters
 const counters = document.querySelectorAll('.counter');

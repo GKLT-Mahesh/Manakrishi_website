@@ -26,7 +26,7 @@
     <nav class="glass-nav">
         <div class="logo"><img src="assets/manakrishi-logo.png" alt="Manakrishi Logo"></div>
         <div class="nav-links">
-            <a href="#story" data-i18n="nav-story">Our Story</a>
+
             <a href="#how-it-works" data-i18n="nav-how">How It Works</a>
             <a href="#technology" data-i18n="nav-tech">Technology</a>
             <a href="#impact" data-i18n="nav-impact">Impact</a>
@@ -85,7 +85,7 @@
                 <span class="reveal-text highlight">The Language of Farms</span>
             </h1>
             <p class="hero-subtitle">Creating a dialogue between technology and nature to feed the future.</p>
-            <a href="#story" class="cta-pulse">Discover the Ecosystem</a>
+
             <a href="booking.html" class="cta-pulse primary-btn">Book Spraying</a>
 
         </div>
@@ -93,49 +93,7 @@
 
     </header>
 
-    <!-- Story Section (Scroll Driven) -->
-    <section id="story" class="story-section">
-        <div class="story-container">
-            <div class="story-sticky">
-                <div class="story-bg-wrapper">
-                    <div class="story-bg active" id="bg-1" style="background-image: url('assets/story-1.png')"></div>
-                    <div class="story-bg" id="bg-2" style="background-image: url('assets/story-2.png')"></div>
-                    <div class="story-bg" id="bg-3" style="background-image: url('assets/story-3.png')"></div>
-                    <div class="story-overlay"></div>
-                </div>
-                <div class="drone-companion" id="story-drone">
-                    <!-- Simplified Drone for tracking -->
-                    <div class="mini-drone"></div>
-                </div>
-                <div class="particles-container" id="particles"></div>
-                <div class="plant-container">
-                    <svg viewBox="0 0 100 200" class="plant-svg">
-                        <path d="M50 200 Q50 150 50 100 Q30 70 20 50" stroke="#4caf50" stroke-width="4" fill="none"
-                            class="stem" />
-                        <path d="M50 100 Q70 70 80 50" stroke="#4caf50" stroke-width="4" fill="none" class="stem" />
-                        <circle cx="50" cy="200" r="5" fill="#5d4037" />
-                    </svg>
-                </div>
-            </div>
 
-            <div class="story-text-blocks">
-                <div class="story-block" data-step="1">
-                    <h2 data-i18n="story-1-h">The Drone Listens</h2>
-                    <p data-i18n="story-1-p">High-precision sensors analyze soil moisture and crop health in real-time.
-                    </p>
-                </div>
-                <div class="story-block" data-step="2">
-                    <h2 data-i18n="story-2-h">The Farm Responds</h2>
-                    <p data-i18n="story-2-p">Hungry crops signal their need for nutrients. The ecosystem is alive.</p>
-                </div>
-                <div class="story-block" data-step="3">
-                    <h2 data-i18n="story-3-h">Precision Delivery</h2>
-                    <p data-i18n="story-3-p">Micro-doses of Urea and Water are deployed exactly where needed. Zero
-                        waste.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Field Gallery Section -->
     <section id="field-gallery" class="gallery-section">
@@ -201,30 +159,59 @@
 
     <!-- How It Works -->
     <section id="how-it-works" class="steps-section">
-        <h2 class="section-title" data-i18n="hiw-title">The Cycle of Intelligence</h2>
+        <h2 class="section-title" data-i18n="hiw-title">Operational Excellence</h2>
+        <p class="section-subtitle">From booking to harvest, we ensure a seamless, high-tech experience.</p>
         <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-icon">👨‍🌾</div>
-                <h3 data-i18n="step-1-h">1. Farmer Request</h3>
-                <p data-i18n="step-1-p">Simple booking via the Manakrishi App.</p>
+            <!-- Step 1 -->
+            <div class="step-card realistic">
+                <div class="step-img-wrapper">
+                    <img src="assets/story-1.png" alt="Digital Field Mapping" class="step-img">
+                </div>
+                <div class="step-content">
+                    <div class="step-number">01</div>
+                    <h3 data-i18n="step-1-h">Digital Booking</h3>
+                    <p data-i18n="step-1-p">Farmers easily book services via our app. We analyze satellite data to map
+                        the field and plan the mission.</p>
+                </div>
             </div>
-            <div class="step-arrow">→</div>
-            <div class="step-card">
-                <div class="step-icon">🚁</div>
-                <h3 data-i18n="step-2-h">2. Drone Deploys</h3>
-                <p data-i18n="step-2-p">Autonomous flight path optimization.</p>
+
+            <!-- Step 2 -->
+            <div class="step-card realistic">
+                <div class="step-img-wrapper">
+                    <img src="assets/tech-drone.png" alt="Drone Fleet Ready" class="step-img">
+                </div>
+                <div class="step-content">
+                    <div class="step-number">02</div>
+                    <h3 data-i18n="step-2-h">Rapid Deployment</h3>
+                    <p data-i18n="step-2-p">Licensed pilots arrive with autonomous drones, ready to scan and treat your
+                        crops in minutes.</p>
+                </div>
             </div>
-            <div class="step-arrow">→</div>
-            <div class="step-card">
-                <div class="step-icon">💧</div>
-                <h3 data-i18n="step-3-h">3. Precision Spray</h3>
-                <p data-i18n="step-3-p">Targeted nutrient and pesticide application.</p>
+
+            <!-- Step 3 -->
+            <div class="step-card realistic">
+                <div class="step-img-wrapper">
+                    <img src="assets/story-3.png" alt="Precision Spraying Operation" class="step-img">
+                </div>
+                <div class="step-content">
+                    <div class="step-number">03</div>
+                    <h3 data-i18n="step-3-h">Precision Action</h3>
+                    <p data-i18n="step-3-p">AI-driven spraying covers every inch of the crop, reducing chemical usage by
+                        30% and saving water.</p>
+                </div>
             </div>
-            <div class="step-arrow">→</div>
-            <div class="step-card">
-                <div class="step-icon">🌾</div>
-                <h3 data-i18n="step-4-h">4. Growth & Yield</h3>
-                <p data-i18n="step-4-p">Healthier crops, higher profits.</p>
+
+            <!-- Step 4 -->
+            <div class="step-card realistic">
+                <div class="step-img-wrapper">
+                    <img src="assets/story-2.png" alt="Healthy Harvest" class="step-img">
+                </div>
+                <div class="step-content">
+                    <div class="step-number">04</div>
+                    <h3 data-i18n="step-4-h">Bountiful Harvest</h3>
+                    <p data-i18n="step-4-p">Optimized health leads to higher yields, better quality produce, and
+                        significantly increased income.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -518,7 +505,7 @@
                     <div class="footer-widget">
                         <h4>Company</h4>
                         <ul class="footer-nav">
-                            <li><a href="#story">Our Story</a></li>
+
                             <li><a href="#how-it-works">How It Works</a></li>
                             <li><a href="#technology">Technology</a></li>
                             <li><a href="#impact">Impact</a></li>

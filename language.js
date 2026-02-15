@@ -8,8 +8,8 @@ const translations = {
         "nav-booking-contact": "Contact Us",
         "nav-home": "Home",
 
-        "hero-title-1": "When Drones Speak",
-        "hero-title-2": "The Language of Farms",
+        "hero-title-1": "Smart Farming",
+        "hero-title-2": "For a Golden Harvest",
         "hero-subtitle": "Creating a dialogue between technology and nature to feed the future.",
         "hero-cta-discover": "Discover the Ecosystem",
         "hero-cta-book": "Book Spraying",
@@ -117,8 +117,8 @@ const translations = {
         "nav-booking-contact": "మమ్మల్ని సంప్రదించండి",
         "nav-home": "హోమ్",
 
-        "hero-title-1": "డ్రోన్లు మాట్లాడినప్పుడు",
-        "hero-title-2": "పొలాల భాష",
+        "hero-title-1": "స్మార్ట్ వ్యవసాయం (Smart Farming)",
+        "hero-title-2": "బంగారు పంట కోసం (For a Golden Harvest)",
         "hero-subtitle": "భవిష్యత్తుకు ఆహారం అందించడానికి సాంకేతికత మరియు ప్రకృతి మధ్య సంభాషణను సృష్టించడం.",
         "hero-cta-discover": "పర్యావరణ వ్యవస్థను కనుగొనండి",
         "hero-cta-book": "స్ప్రేయింగ్ బుక్ చేయండి",

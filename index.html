@@ -23,50 +23,67 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="glass-nav">
-        <div class="logo"><img src="assets/manakrishi-logo.png" alt="Manakrishi Logo"></div>
-        <div class="nav-links">
+    <nav class="premium-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/manakrishi-logo.png" alt="Manakrishi Logo">
+                </a>
+            </div>
 
-            <a href="#how-it-works" data-i18n="nav-how">How It Works</a>
-            <a href="#technology" data-i18n="nav-tech">Technology</a>
-            <a href="#impact" data-i18n="nav-impact">Impact</a>
-        </div>
-        <div class="nav-actions">
-            <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" class="theme-btn">
-                <!-- Sun Icon (for dark mode default) -->
-                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <!-- Moon Icon (hidden by default) -->
-                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    style="display:none;">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
-            <button class="cta-small" onclick="toggleLanguage()" id="lang-btn"
-                style="background: transparent; border: 1px solid var(--color-secondary); color: var(--color-secondary);">
-                <span id="lang-btn-text">తెలుగు</span>
-            </button>
-            <a href="https://wa.me/918886124318" target="_blank" class="cta-small" data-i18n="nav-contact"
-                style="display: flex; align-items: center; gap: 8px;">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                    <path
-                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>Join the
-                Revolution</a>
-            <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-links-wrapper">
+                <a href="#how-it-works" class="nav-link" data-i18n="nav-how">
+                    <span>How It Works</span>
+                </a>
+                <a href="#technology" class="nav-link" data-i18n="nav-tech">
+                    <span>Technology</span>
+                </a>
+                <a href="#impact" class="nav-link" data-i18n="nav-impact">
+                    <span>Impact</span>
+                </a>
+                <!-- Moved Contact here for better flow -->
+                <a href="https://wa.me/918886124318" target="_blank" class="nav-link contact-link"
+                    data-i18n="nav-contact">
+                    <span>Contact Us</span>
+                </a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" class="icon-btn theme-btn">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="display:none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="lang-switch-btn" onclick="toggleLanguage()" id="lang-btn">
+                    <span class="lang-text" id="lang-btn-text">తెలుగు</span>
+                    <svg viewBox="0 0 24 24" fill="none" class="lang-icon" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                </button>
+
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                    <div class="line line-3"></div>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -82,8 +99,8 @@
 
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="reveal-text">When Drones Speak</span><br>
-                <span class="reveal-text highlight">The Language of Farms</span>
+                <span class="reveal-text" data-i18n="hero-title-1">Smart Farming</span><br>
+                <span class="reveal-text highlight" data-i18n="hero-title-2">For a Golden Harvest</span>
             </h1>
             <p class="hero-subtitle">Creating a dialogue between technology and nature to feed the future.</p>
 
@@ -432,8 +449,9 @@
         <section class="cta-section">
             <div class="cta-content">
                 <h2>Ready to Transform Your Farm?</h2>
-                <button class="cta-large" onclick="window.location.href='booking.html'">Book Drone Spraying
-                    Service</button>
+                <a href="booking.html" class="cta-highlight" style="padding: 18px 40px; font-size: 1.2rem;">
+                    <span>Book Drone Spraying Service</span>
+                </a>
             </div>
             <div class="drone-landing">
                 <!-- Drone silhouette landing -->
@@ -479,6 +497,10 @@
                                 </svg>
                             </a>
                         </div>
+                        <a href="booking.html" class="cta-highlight footer-cta">
+                            <span>Book Now</span>
+                            <div class="liquid"></div>
+                        </a>
                     </div>
 
                     <div class="footer-widget">
@@ -497,8 +519,11 @@
                         <ul class="footer-info">
                             <li>46-122/1 chintal Hyderabad Telangana</li>
                             <li><a href="mailto:gklt@manakrishi.in">gklt@manakrishi.in</a></li>
-                            <li><a href="https://wa.me/918886124318" target="_blank">+91 8886124318 <span
-                                        style="font-size: 0.8em; margin-left: 5px;">(WhatsApp)</span></a></li>
+                            <li><a href="https://wa.me/918886124318" target="_blank"
+                                    style="color: var(--color-accent); font-weight: 700; font-size: 1.1rem; text-decoration: underline;">+91
+                                    8886124318 <span
+                                        style="font-size: 0.8em; margin-left: 5px; color: #fff;">(WhatsApp)</span></a>
+                            </li>
                         </ul>
                     </div>
 

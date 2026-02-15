@@ -198,7 +198,7 @@ if (themeBtn) {
 }
 
 // 8. Navbar Scroll Effect
-const nav = document.querySelector('.glass-nav');
+const nav = document.querySelector('.premium-nav');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         nav.classList.add('scrolled');

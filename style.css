@@ -68,7 +68,8 @@ a {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1.2rem 5%;
+    padding: 0.6rem 5%;
+    /* Reduced padding from 1.2rem */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,7 +89,8 @@ body.light-mode .glass-nav {
 }
 
 .glass-nav.scrolled {
-    padding: 0.8rem 5%;
+    padding: 0.4rem 5%;
+    /* Further reduced for scrolled state */
     background: rgba(15, 22, 16, 0.8);
     backdrop-filter: blur(20px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -144,8 +146,8 @@ body.light-mode .glass-nav {
 }
 
 .logo img {
-    height: 60px;
-    /* Adjust as needed */
+    height: 40px;
+    /* Reduced height from 60px */
     width: auto;
 }
 
@@ -245,20 +247,61 @@ body.light-mode .theme-btn {
 }
 
 /* Overlay to ensure text readability on top of image */
-.hero-bg-layers {
+/* Slider Container */
+.hero-slider {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Stronger gradient for better text contrast */
-    background: linear-gradient(180deg, rgba(15, 22, 16, 0.7) 0%, rgba(15, 22, 16, 0.4) 50%, rgba(15, 22, 16, 0.9) 100%);
     z-index: 0;
+    background: #000;
+    /* Fallback for transparency */
 }
 
-.layer {
-    display: none;
-    /* Removing old CSS layers */
+/* Individual Slide */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* Cover ensures no distortion (compression) */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 2s ease-in-out;
+}
+
+/* Active Slide */
+.slide.active {
+    opacity: 1;
+    /* Zoom effect removed to keep image static and fully visible as requested */
+}
+
+/* Ken Burns Zoom Effect */
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Gradient Overlay for Text Readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(15, 22, 16, 0.6) 0%, rgba(15, 22, 16, 0.3) 50%, rgba(15, 22, 16, 0.8) 100%);
+    z-index: 2;
+    pointer-events: none;
 }
 
 /* Water Spray Particles */

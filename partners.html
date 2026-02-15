@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manakrishi | Visionaries & Partners</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <style>
+        /* Specific Styles for Partners Page */
+        .partners-hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(15, 22, 16, 0.8), rgba(15, 22, 16, 0.9)), url('assets/vision-bg.png') no-repeat center/cover;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .partners-hero h1 {
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .partners-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 6rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .partner-bio-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .partner-bio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--color-secondary);
+        }
+
+        .bio-img-wrapper {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.6s ease;
+        }
+
+        .partner-bio-card:hover .bio-img {
+            transform: scale(1.05);
+        }
+
+        .bio-content {
+            padding: 2rem;
+        }
+
+        .bio-role {
+            color: var(--color-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .bio-name {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .bio-desc {
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .bio-social-link {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            color: #fff;
+        }
+
+        .bio-social-link:hover {
+            background: var(--color-secondary);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo" onclick="window.location.href='index.html'"><img src="assets/manakrishi-logo.png"
+                alt="Manakrishi Logo"></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <!-- Reuse existing button style if needed -->
+            <button class="cta-small" onclick="window.location.href='booking.html'">Book Service</button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="partners-hero">
+        <div>
+            <h1>Visionaries & Partners</h1>
+            <p style="color: var(--color-text-muted); margin-top: 1rem; font-size: 1.2rem;">Driving the future of
+                sustainable agriculture.</p>
+        </div>
+    </header>
+
+    <!-- Bios Section -->
+    <section class="partners-grid">
+        <!-- Card 1: Karthikeya -->
+        <div class="partner-bio-card">
+            <div class="bio-img-wrapper">
+                <img src="assets/karthik.png" alt="Karthikeya Gundlapally" class="bio-img">
+            </div>
+            <div class="bio-content">
+                <span class="bio-role">Founder & CEO</span>
+                <h2 class="bio-name">Karthikeya Gundlapally</h2>
+                <p class="bio-desc">
+                    A visionary leader passionate about integrating advanced technology into traditional farming
+                    practices.
+                    Karthikeya leads Manakrishi with a mission to make precision agriculture accessible to every farmer
+                    in India. His expertise in drone technology and deep understanding of rural challenges drives the
+                    company's innovation.
+                </p>
+                <div class="bio-social">
+                    <a href="#" class="bio-social-link" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Thirumal Reddy -->
+        <div class="partner-bio-card">
+            <div class="bio-img-wrapper">
+                <img src="assets/terumal.jpeg" alt="Lingagari Thirumal Reddy" class="bio-img">
+            </div>
+            <div class="bio-content">
+                <span class="bio-role">Director</span>
+                <h2 class="bio-name">Lingagari Thirumal Reddy</h2>
+                <p class="bio-desc">
+                    With decades of experience in agricultural management and operations, Thirumal Reddy ensures
+                    that Manakrishi's services are delivered with reliability and excellence. He focuses on
+                    building strong relationships with farming communities and expanding the company's operational
+                    footprint.
+                </p>
+                <div class="bio-social">
+                    <!-- Placeholder links -->
+                    <a href="#" class="bio-social-link" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Manakrishi Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

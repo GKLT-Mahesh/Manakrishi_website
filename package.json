@@ -1,0 +1,16 @@
+{
+  "name": "manakrishi-website",
+  "version": "1.0.0",
+  "description": "Manakrishi Website - The Future of Farming",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

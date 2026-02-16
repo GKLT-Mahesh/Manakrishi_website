@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
     <!-- CSS -->
@@ -33,51 +33,362 @@
     </script>
 
     <style>
-        /* Specific Styles for Partners Page */
+        /* ============================
+           PARTNERS PAGE — PREMIUM CSS
+           ============================ */
+
+        /* --- Hero Section --- */
         .partners-hero {
-            height: 60vh;
+            min-height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(15, 22, 16, 0.8), rgba(15, 22, 16, 0.9)), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1200') no-repeat center/cover;
             text-align: center;
-            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 20% 50%, rgba(0, 188, 212, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(45, 90, 39, 0.12) 0%, transparent 50%),
+                linear-gradient(180deg, #0a0f0b 0%, #0f1610 40%, #111a13 100%);
+        }
+
+        /* Animated mesh grid background */
+        .partners-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 188, 212, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 188, 212, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridPulse 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes gridPulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Floating orbs */
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            animation: orbFloat 12s ease-in-out infinite;
+        }
+
+        .hero-orb--1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 188, 212, 0.08);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .hero-orb--2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(45, 90, 39, 0.1);
+            bottom: -80px;
+            right: -80px;
+            animation-delay: -4s;
+        }
+
+        .hero-orb--3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 179, 0, 0.06);
+            top: 30%;
+            right: 15%;
+            animation-delay: -8s;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(30px, -20px) scale(1.1);
+            }
+
+            50% {
+                transform: translate(-20px, 30px) scale(0.9);
+            }
+
+            75% {
+                transform: translate(15px, 15px) scale(1.05);
+            }
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 5%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.5rem 1.4rem;
+            background: rgba(0, 188, 212, 0.08);
+            color: var(--color-secondary);
+            border: 1px solid rgba(0, 188, 212, 0.25);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(8px);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-badge svg {
+            width: 14px;
+            height: 14px;
         }
 
         .partners-hero h1 {
-            font-size: 3rem;
-            color: #fff;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            font-family: 'Outfit', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
-        .partners-grid {
-            max-width: 1200px;
+        .partners-hero h1 .text-gradient {
+            background: linear-gradient(135deg, #4ade80, #00bcd4, #38bdf8);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 6s ease-in-out infinite;
+        }
+
+        .partners-hero h1 .text-white {
+            color: #ffffff;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.8;
+            max-width: 560px;
             margin: 0 auto;
-            padding: 0 5% 6rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
-        .partner-bio-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+        /* Decorative line under hero */
+        .hero-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+            margin: 2.5rem auto 0;
+            border-radius: 2px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        /* --- Mission Quote Section --- */
+        .mission-section {
+            padding: 5rem 5%;
+            text-align: center;
+            position: relative;
             overflow: hidden;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            backdrop-filter: blur(10px);
+        }
+
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(180deg, rgba(0, 188, 212, 0.5), transparent);
+        }
+
+        .mission-quote {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .mission-quote blockquote {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.75);
+            font-style: italic;
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        .mission-quote blockquote::before {
+            content: '\201C';
+            position: absolute;
+            top: -30px;
+            left: -10px;
+            font-size: 6rem;
+            color: rgba(0, 188, 212, 0.15);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .mission-quote cite {
+            display: block;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            font-style: normal;
+            color: var(--color-secondary);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* --- Section Header --- */
+        .partners-section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 5%;
+        }
+
+        .partners-section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .partners-section-header p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.05rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* --- Partners Grid --- */
+        .partners-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5% 8rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        /* --- Bio Card (Premium) --- */
+        .partner-bio-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: cardFadeIn 0.8s ease-out forwards;
+        }
+
+        .partner-bio-card:nth-child(1) {
+            animation-delay: 0.15s;
+        }
+
+        .partner-bio-card:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .partner-bio-card:nth-child(3) {
+            animation-delay: 0.45s;
+        }
+
+        @keyframes cardFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Gradient border glow on hover */
+        .partner-bio-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 24px;
+            padding: 1.5px;
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.5), rgba(74, 222, 128, 0.4), rgba(56, 189, 248, 0.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .partner-bio-card:hover::before {
+            opacity: 1;
         }
 
         .partner-bio-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            border-color: var(--color-secondary);
+            transform: translateY(-12px);
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(0, 188, 212, 0.06);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: transparent;
         }
 
+        /* --- Image Wrapper --- */
         .bio-img-wrapper {
-            height: 350px;
+            height: 380px;
             overflow: hidden;
             position: relative;
+        }
+
+        /* Gradient overlay on image bottom for smooth text transition */
+        .bio-img-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(15, 22, 16, 1) 0%, transparent 100%);
+            z-index: 1;
+            pointer-events: none;
         }
 
         .bio-img {
@@ -85,60 +396,198 @@
             height: 100%;
             object-fit: cover;
             object-position: top;
-            transition: transform 0.6s ease;
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), filter 0.6s ease;
+            filter: grayscale(0.4) brightness(0.95);
         }
 
         .partner-bio-card:hover .bio-img {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            filter: grayscale(0) brightness(1.08) saturate(1.1);
         }
 
+        /* Karthikeya (Founder) card - slight zoom to frame face better */
+        .partner-bio-card:nth-child(1) .bio-img {
+            transform: scale(1.15);
+            object-position: center 20%;
+        }
+
+        .partner-bio-card:nth-child(1):hover .bio-img {
+            transform: scale(1.25);
+            /* Inherits the color bloom from general hover, providing a cohesive look */
+        }
+
+        /* Bakki Mahesh card - dark background photo needs special positioning */
+        .partner-bio-card:nth-child(3) .bio-img-wrapper {
+            background: #0a0a0a;
+        }
+
+        .partner-bio-card:nth-child(3) .bio-img {
+            object-position: center 25%;
+            /* Custom filter for the dark photo: less grayscale, more brightness */
+            filter: grayscale(0.2) brightness(1.1) contrast(1.1);
+        }
+
+        .partner-bio-card:nth-child(3):hover .bio-img {
+            /* Bloom effect specifically tuned for the dark background */
+            filter: grayscale(0) brightness(1.25) contrast(1.15) saturate(1.1);
+        }
+
+        /* --- Bio Content --- */
         .bio-content {
-            padding: 2rem;
+            padding: 1.5rem 2rem 2rem;
+            position: relative;
+        }
+
+        /* Accent line at top of content */
+        .bio-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 2rem;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-secondary), rgba(74, 222, 128, 0.6));
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        .partner-bio-card:hover .bio-content::before {
+            width: 60px;
         }
 
         .bio-role {
             color: var(--color-secondary);
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+            letter-spacing: 2.5px;
+            margin-bottom: 0.6rem;
+            margin-top: 0.8rem;
             display: block;
+            opacity: 0.85;
         }
 
         .bio-name {
-            font-size: 1.8rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
             margin-bottom: 1rem;
             color: #fff;
+            letter-spacing: -0.5px;
         }
 
         .bio-desc {
-            color: var(--color-text-muted);
-            line-height: 1.7;
-            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.75;
+            font-size: 0.95rem;
             margin-bottom: 1.5rem;
         }
 
+        /* --- Social Links --- */
         .bio-social {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .bio-social-link {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: 0.3s;
-            color: #fff;
+            transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+            color: rgba(255, 255, 255, 0.6);
         }
 
         .bio-social-link:hover {
             background: var(--color-secondary);
+            border-color: var(--color-secondary);
+            color: #0f1610;
             transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3);
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .partners-hero {
+                min-height: 60vh;
+                padding: 6rem 5% 3rem;
+            }
+
+            .partners-hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 5% 5rem;
+            }
+
+            .mission-quote blockquote {
+                font-size: 1.2rem;
+            }
+
+            .partners-section-header h2 {
+                font-size: 2rem;
+            }
+
+            .bio-img-wrapper {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .partners-hero h1 {
+                font-size: 2rem;
+            }
+
+            .bio-name {
+                font-size: 1.4rem;
+            }
+
+            .bio-img-wrapper {
+                height: 260px;
+            }
         }
     </style>
 </head>
@@ -155,19 +604,56 @@
             <a href="index.html#contact">Contact</a>
         </div>
         <div class="nav-actions">
-            <!-- Reuse existing button style if needed -->
             <button class="cta-small" onclick="window.location.href='booking.html'">Book Service</button>
         </div>
     </nav>
 
-    <!-- Header -->
+    <!-- Hero Section -->
     <header class="partners-hero">
-        <div>
-            <h1>Visionaries & Partners</h1>
-            <p style="color: var(--color-text-muted); margin-top: 1rem; font-size: 1.2rem;">Driving the future of
-                sustainable agriculture.</p>
+        <!-- Floating background orbs -->
+        <div class="hero-orb hero-orb--1"></div>
+        <div class="hero-orb hero-orb--2"></div>
+        <div class="hero-orb hero-orb--3"></div>
+
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                Our Leadership
+            </div>
+            <h1>
+                <span class="text-white">Meet the </span><br>
+                <span class="text-gradient">Visionaries & Partners</span>
+            </h1>
+            <p class="hero-subtitle">
+                The passionate minds driving innovation in precision agriculture and shaping the future of sustainable
+                farming across India.
+            </p>
+            <div class="hero-divider"></div>
         </div>
     </header>
+
+    <!-- Mission Quote -->
+    <section class="mission-section">
+        <div class="mission-quote">
+            <blockquote>
+                Technology should empower every farmer, not replace them. Our mission is to bridge the gap between
+                innovation and the hands that feed the world.
+            </blockquote>
+            <cite>— Manakrishi Team</cite>
+        </div>
+    </section>
+
+    <!-- Section Header -->
+    <div class="partners-section-header">
+        <h2>The Team Behind the Vision</h2>
+        <p>A team united by the purpose of making agriculture smarter, more sustainable, and accessible to all.</p>
+    </div>
 
     <!-- Bios Section -->
     <section class="partners-grid">
@@ -181,13 +667,13 @@
                 <h2 class="bio-name">Karthikeya Gundlapally</h2>
                 <p class="bio-desc">
                     A visionary leader passionate about integrating advanced technology into traditional farming
-                    practices.
-                    Karthikeya leads Manakrishi with a mission to make precision agriculture accessible to every farmer
-                    in India. His expertise in drone technology and deep understanding of rural challenges drives the
-                    company's innovation.
+                    practices. Karthikeya leads Manakrishi with a mission to make precision agriculture accessible
+                    to every farmer in India. His expertise in drone technology and deep understanding of rural
+                    challenges drives the company's innovation.
                 </p>
                 <div class="bio-social">
-                    <a href="#" class="bio-social-link" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/karthikeya-gundlapally-b53673296" target="_blank"
+                        rel="noopener noreferrer" class="bio-social-link" aria-label="LinkedIn">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -212,7 +698,28 @@
                     footprint.
                 </p>
                 <div class="bio-social">
-                    <!-- Placeholder links -->
+                    <a href="#" class="bio-social-link" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3: Bakki Mahesh -->
+        <div class="partner-bio-card">
+            <div class="bio-img-wrapper">
+                <img src="assets/bakki-mahesh.jpg" alt="Bakki Mahesh" class="bio-img">
+            </div>
+            <div class="bio-content">
+                <span class="bio-role">COO</span>
+                <h2 class="bio-name">Bakki Mahesh</h2>
+                <p class="bio-desc">
+                    The creative force behind Manakrishi's digital presence. He designed the entire website, ensuring
+                    a seamless technology experience for farmers and partners alike.
+                </p>
+                <div class="bio-social">
                     <a href="#" class="bio-social-link" aria-label="LinkedIn">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <path

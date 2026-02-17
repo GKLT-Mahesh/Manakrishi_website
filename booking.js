@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fullname: document.getElementById('fullname'),
         mobile: document.getElementById('mobile'),
         village: document.getElementById('village'),
+        date: document.getElementById('date'),
         crop: document.getElementById('crop'),
         acres: document.getElementById('acres')
     };
@@ -96,6 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
             isValid = false;
         } else showError(fields.village, false);
 
+        if (!fields.date || !fields.date.value) {
+            showError(fields.date, true);
+            if (!firstInvalid) firstInvalid = fields.date;
+            isValid = false;
+        } else showError(fields.date, false);
+
         if (!fields.crop || !fields.crop.value.trim()) {
             showError(fields.crop, true);
             if (!firstInvalid) firstInvalid = fields.crop;
@@ -123,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fullname: fields.fullname.value.trim(),
             mobile: fields.mobile.value.trim(),
             village: fields.village.value.trim(),
+            date: fields.date.value,
             crop: fields.crop.value.trim(),
             acres: fields.acres.value.trim(),
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -141,10 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         fullname: formData.fullname,
                         mobile: formData.mobile,
                         village: formData.village,
+                        date: formData.date,
                         crop: formData.crop,
                         acres: formData.acres
                     })
-                }).catch(() => {});
+                }).catch(() => { });
             }
 
             showSuccess();

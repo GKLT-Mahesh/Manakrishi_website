@@ -50,10 +50,12 @@
                 <a href="index.html#how-it-works" data-i18n="nav-how">How It Works</a>
             </div>
             <div class="nav-actions">
-                <button type="button" class="cta-small cta-lang" onclick="toggleLanguage()" id="lang-btn" aria-label="Toggle language">
+                <button type="button" class="cta-small cta-lang" onclick="toggleLanguage()" id="lang-btn"
+                    aria-label="Toggle language">
                     <span id="lang-btn-text">తెలుగు</span>
                 </button>
-                <a href="https://wa.me/918886124318" target="_blank" rel="noopener noreferrer" class="cta-small cta-contact" data-i18n="nav-booking-contact">Contact Us</a>
+                <a href="https://wa.me/918886124318" target="_blank" rel="noopener noreferrer"
+                    class="cta-small cta-contact" data-i18n="nav-booking-contact">Contact Us</a>
             </div>
         </nav>
     </header>
@@ -89,6 +91,12 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="date" data-i18n="lbl-date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required class="form-input" data-i18n="ph-date">
+                        <small class="error-msg">Please select a date</small>
+                    </div>
+
+                    <div class="form-group">
                         <label for="crop" data-i18n="lbl-crop">Crop Type</label>
                         <input type="text" id="crop" name="crop" placeholder="E.g., Paddy, Cotton, Chilli" required
                             class="form-input" data-i18n="ph-crop">
@@ -102,7 +110,8 @@
                         <small class="error-msg">Please enter valid acreage</small>
                     </div>
 
-                    <button type="submit" class="submit-btn"><span class="submit-btn-text" data-i18n="btn-confirm">Confirm Booking</span></button>
+                    <button type="submit" class="submit-btn"><span class="submit-btn-text"
+                            data-i18n="btn-confirm">Confirm Booking</span></button>
                 </form>
             </div>
 

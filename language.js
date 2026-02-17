@@ -101,7 +101,9 @@ const translations = {
         "success-title": "Booking Confirmed!",
         "success-desc": "We have received your request. Our team will contact you shortly.",
         "btn-book-another": "Book Another Service",
-        "btn-later": "I will do it later"
+        "btn-later": "I will do it later",
+        "lbl-date": "Preferred Date",
+        "ph-date": "Select a date"
     },
     "te": {
         "nav-story": "మా కథ",
@@ -205,7 +207,9 @@ const translations = {
         "success-title": "బుకింగ్ నిర్ధారించబడింది!",
         "success-desc": "మేము మీ అభ్యర్థనను స్వీకరించాము. మా బృందం త్వరలో మిమ్మల్ని సంప్రదిస్తుంది.",
         "btn-book-another": "మరొక సేవను బుక్ చేయండి",
-        "btn-later": "నేను తరువాత చేస్తాను"
+        "btn-later": "నేను తరువాత చేస్తాను",
+        "lbl-date": "తేదీ",
+        "ph-date": "తేదీని ఎంచుకోండి"
     }
 };
 

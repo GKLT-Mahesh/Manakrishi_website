@@ -46,8 +46,10 @@ const translations = {
 
 
         "schemes-title": "Security & Support for Every Farmer",
-        "coming-soon-title": "Coming Soon",
-        "coming-soon-desc": "We are working on bringing exclusive security and support schemes for every farmer. Stay tuned!",
+        "scheme-1-h": "Secure Your Future",
+        "scheme-1-p": "Comprehensive coverage with the Post Office Insurance Scheme. Accessible, affordable, and reliable protection for you and your family.",
+        "scheme-2-h": "Unlock Government Benefits",
+        "scheme-2-p": "We help you navigate and apply for essential government schemes like PM-Kisan, Soil Health Cards, and Crop Insurance to maximize your benefits.",
 
         "impact-title": "Empowering the Hands that Feed",
         "impact-cost": "Cost Reduction",
@@ -148,8 +150,10 @@ const translations = {
 
 
         "schemes-title": "ప్రతి రైతుకు భద్రత & మద్దతు",
-        "coming-soon-title": "త్వరలో వస్తుంది",
-        "coming-soon-desc": "రైతులందరికీ ప్రత్యేకమైన భద్రత మరియు మద్దతు పథకాలను తీసుకురావడానికి మేము కృషి చేస్తున్నాము. వేచి ఉండండి!",
+        "scheme-1-h": "మీ భవిష్యత్తును సురక్షితం చేసుకోండి",
+        "scheme-1-p": "పోస్టాఫీసు బీమా పథకంతో సమగ్ర కవరేజ్. మీకు మరియు మీ కుటుంబానికి అందుబాటులో ఉండే, సరసమైన మరియు నమ్మదగిన రక్షణ.",
+        "scheme-2-h": "ప్రభుత్వ ప్రయోజనాలను అన్‌లాక్ చేయండి",
+        "scheme-2-p": "మీ ప్రయోజనాలను పెంచుకోవడానికి PM-కిసాన్, సాయిల్ హెల్త్ కార్డ్‌లు మరియు పంటల బీమా వంటి ముఖ్యమైన ప్రభుత్వ పథకాల కోసం దరఖాస్తు చేసుకోవడంలో మేము మీకు సహాయం చేస్తాము.",
 
         "impact-title": "రైతులకు సాధికారత",
         "impact-cost": "ఖర్చు తగ్గింపు",

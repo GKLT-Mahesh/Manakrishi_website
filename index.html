@@ -122,6 +122,8 @@
                 <span class="reveal-text" data-i18n="hero-title-1">Smart Farming</span><br>
                 <span class="reveal-text highlight" data-i18n="hero-title-2">For a Golden Harvest</span>
             </h1>
+            <p class="hero-subtitle">Creating a dialogue between technology and nature to feed the future.</p>
+
             <a href="booking.html" class="cta-pulse primary-btn">Book Spraying</a>
         </div>
 
@@ -351,11 +353,31 @@
     <!-- Support & Schemes Section -->
     <section id="schemes" class="schemes-section">
         <h2 class="section-title" data-i18n="schemes-title">Security & Support for Every Farmer</h2>
-        <div class="coming-soon-wrapper">
-            <div class="coming-soon-content">
-                <h3 class="coming-soon-text" data-i18n="coming-soon-title">Coming Soon</h3>
-                <p class="coming-soon-desc" data-i18n="coming-soon-desc">We are working on bringing exclusive security
-                    and support schemes for every farmer. Stay tuned!</p>
+        <div class="schemes-container">
+            <div class="scheme-card">
+                <div class="scheme-img-wrapper">
+                    <img src="assets/scheme-insurance.png" alt="Post Office Insurance Scheme ₹399/Year"
+                        class="scheme-img">
+                </div>
+                <div class="scheme-content">
+                    <h3 data-i18n="scheme-1-h">Secure Your Future</h3>
+                    <div class="price-tag">₹399 / Year</div>
+                    <p data-i18n="scheme-1-p">Comprehensive coverage with the Post Office Insurance Scheme. Accessible,
+                        affordable, and
+                        reliable protection for you and your family.</p>
+                </div>
+            </div>
+
+            <div class="scheme-card reverse">
+                <div class="scheme-img-wrapper">
+                    <img src="assets/scheme-govt.png" alt="Government Schemes for Farmers" class="scheme-img">
+                </div>
+                <div class="scheme-content">
+                    <h3 data-i18n="scheme-2-h">Unlock Government Benefits</h3>
+                    <p data-i18n="scheme-2-p">We help you navigate and apply for essential government schemes like
+                        PM-Kisan, Soil Health Cards,
+                        and Crop Insurance to maximize your benefits.</p>
+                </div>
             </div>
         </div>
 
@@ -388,25 +410,52 @@
         <section id="feedback" class="feedback-section">
             <h2 class="section-title" data-i18n="feedback-title">Trusted by Farmers</h2>
             <div class="feedback-grid">
-                <!-- Feedback Card 1: Group of Young Farmers -->
+                <!-- Feedback Card 1 -->
                 <div class="feedback-card">
                     <div class="feedback-img-wrapper">
-                        <!-- Placeholder for the new image of 3 young men in the field -->
-                        <img src="assets/feedback-1.jpg" alt="Young Farmers Group" class="feedback-img">
+                        <img src="assets/feedback-1.jpg" alt="Farmer Feedback" class="feedback-img">
                     </div>
                     <div class="feedback-content">
                         <span class="feedback-quote-icon">❝</span>
-                        <p class="feedback-text" data-i18n="feedback-1-text">"As young farmers, we need technology to
-                            move forward. Manakrishi's guidance on modern crop management has been a game changer for
-                            our community."</p>
+                        <p class="feedback-text" data-i18n="feedback-1-text">"Manakrishi's drone technology has
+                            completely transformed how we farm. It's faster, cheaper, and safer."</p>
                         <div class="farmer-details">
-                            <h4 class="farmer-name" data-i18n="feedback-1-name">Naveen & Team</h4>
-                            <span class="location" data-i18n="feedback-1-loc">Warangal</span>
+                            <h4 class="farmer-name" data-i18n="feedback-1-name">Ramesh Reddy</h4>
+                            <span class="location" data-i18n="feedback-1-loc">Telangana</span>
                         </div>
                     </div>
                 </div>
-
-
+                <!-- Feedback Card 2 -->
+                <div class="feedback-card">
+                    <div class="feedback-img-wrapper">
+                        <img src="assets/feedback-woman-strawberry.jpg" alt="Successful Woman Farmer"
+                            class="feedback-img">
+                    </div>
+                    <div class="feedback-content">
+                        <span class="feedback-quote-icon">❝</span>
+                        <p class="feedback-text" data-i18n="feedback-2-text">"I used to spend days spraying by hand.
+                            Now, it's done in minutes with better coverage. Truly impressive!"</p>
+                        <div class="farmer-details">
+                            <h4 class="farmer-name" data-i18n="feedback-2-name">Lakshmi Devi</h4>
+                            <span class="location" data-i18n="feedback-2-loc">Andhra Pradesh</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feedback Card 3 -->
+                <div class="feedback-card">
+                    <div class="feedback-img-wrapper">
+                        <img src="assets/feedback-3-updated.jpg" alt="Farmer Inspecting Crops" class="feedback-img">
+                    </div>
+                    <div class="feedback-content">
+                        <span class="feedback-quote-icon">❝</span>
+                        <p class="feedback-text" data-i18n="feedback-3-text">"The Manakrishi team is supportive and
+                            knowledgeable. Their service has helped me increase my yields significantly."</p>
+                        <div class="farmer-details">
+                            <h4 class="farmer-name" data-i18n="feedback-3-name">Venkatesh Rao</h4>
+                            <span class="location" data-i18n="feedback-3-loc">Guntur</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -527,37 +576,31 @@
         </div>
 
         <!-- Service Modal -->
-        <div id="service-modal" class="modal-overlay" role="dialog" aria-modal="true"
-            aria-labelledby="service-modal-title" aria-hidden="true">
-            <div class="modal-content service-modal-content">
-                <button type="button" class="modal-close" aria-label="Close services">&times;</button>
-                <h2 id="service-modal-title" class="modal-title">Our Services</h2>
-                <p class="modal-subtitle">Smart solutions for modern farming</p>
+        <div id="service-modal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <h2 class="modal-title">Our Services</h2>
                 <div class="modal-grid">
-                    <div class="modal-item" data-service="spraying">
-                        <div class="modal-icon-wrap"><span class="modal-icon" aria-hidden="true">🚁</span></div>
+                    <div class="modal-item">
+                        <div class="modal-icon">🚁</div>
                         <h3>Drone Spraying</h3>
                         <p>Precision application of pesticides and fertilizers.</p>
                     </div>
-                    <div class="modal-item modal-item-coming-soon" data-service="insurance">
-                        <span class="modal-badge">Coming Soon</span>
-                        <div class="modal-icon-wrap"><span class="modal-icon" aria-hidden="true">🛡️</span></div>
-                        <h3>Insurance</h3>
-                        <p>Affordable crop & family insurance schemes for farmer security.</p>
+                    <div class="modal-item">
+                        <div class="modal-icon">🌱</div>
+                        <h3>Crop Monitoring</h3>
+                        <p>Real-time health analysis and growth tracking.</p>
                     </div>
-                    <div class="modal-item" data-service="field-support">
-                        <div class="modal-icon-wrap"><span class="modal-icon" aria-hidden="true">🤝</span></div>
-                        <h3>Field Support</h3>
-                        <p>On-ground agronomy support and guidance at your farm.</p>
+                    <div class="modal-item">
+                        <div class="modal-icon">🚜</div>
+                        <h3>Soil Analysis</h3>
+                        <p>Detailed soil health reports for better yield.</p>
                     </div>
-                    <div class="modal-item" data-service="irrigation">
-                        <div class="modal-icon-wrap"><span class="modal-icon" aria-hidden="true">💧</span></div>
+                    <div class="modal-item">
+                        <div class="modal-icon">💧</div>
                         <h3>Irrigation Planning</h3>
                         <p>Water management strategies for efficiency.</p>
                     </div>
-                </div>
-                <div class="modal-cta">
-                    <a href="booking.html" class="modal-cta-btn">Book Drone Spraying</a>
                 </div>
             </div>
         </div>

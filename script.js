@@ -33,20 +33,6 @@ ScrollTrigger.batch(".gallery-card", {
 
 // Ensure initial state is hidden for animation to work
 gsap.set(".gallery-card", { y: 50, opacity: 0 });
-gsap.set(".feedback-card", { y: 50, opacity: 0 });
-
-// Feedback Animation
-ScrollTrigger.batch(".feedback-card", {
-    onEnter: batch => gsap.to(batch, {
-        opacity: 1,
-        y: 0,
-        stagger: 0.2,
-        duration: 0.8,
-        ease: "power2.out",
-        overwrite: true
-    }),
-    start: "top 85%"
-});
 
 // Counter Animation Logic
 const counters = document.querySelectorAll('.counter');
@@ -75,62 +61,24 @@ counters.forEach(counter => {
 
 
 // 6. Newsletter Form Handling
-// 6. Newsletter Form Handling
 const newsletterForm = document.querySelector('.newsletter-form');
 if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = newsletterForm.querySelector('button');
-        const input = newsletterForm.querySelector('input');
         const originalContent = btn.innerHTML;
 
-        // Simulate loading
-        btn.innerHTML = '<div class="spinner"></div>';
-        input.disabled = true;
-        btn.disabled = true;
-        btn.style.pointerEvents = 'none';
+        // Visual feedback
+        btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        btn.style.backgroundColor = '#4caf50';
 
-        // Simulate API call
+        // Reset after a few seconds
         setTimeout(() => {
-            // Success State
-            btn.innerHTML = '<svg className="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-            btn.style.backgroundColor = '#4caf50';
-            btn.style.boxShadow = '0 0 15px rgba(76, 175, 80, 0.5)';
-            input.value = 'Subscribed!';
-            input.style.textAlign = 'center';
-
-            setTimeout(() => {
-                // Reset
-                btn.innerHTML = originalContent;
-                btn.style.backgroundColor = '';
-                btn.style.boxShadow = '';
-                btn.style.pointerEvents = '';
-                input.value = '';
-                input.style.textAlign = '';
-                input.disabled = false;
-                btn.disabled = false;
-            }, 3000);
-        }, 1500);
+            btn.innerHTML = originalContent;
+            btn.style.backgroundColor = '';
+            newsletterForm.reset();
+        }, 3000);
     });
-
-    // Add dynamic styles for spinner
-    if (!document.getElementById('newsletter-styles')) {
-        const style = document.createElement('style');
-        style.id = 'newsletter-styles';
-        style.textContent = `
-            @keyframes spin { to { transform: rotate(360deg); } }
-            .spinner {
-                width: 18px; 
-                height: 18px; 
-                border: 2px solid rgba(255,255,255,0.3); 
-                border-radius: 50%; 
-                border-top-color: #fff; 
-                animation: spin 0.8s linear infinite;
-                margin: 0 auto;
-            }
-        `;
-        document.head.appendChild(style);
-    }
 }
 // 7. Theme Toggle Logic
 const themeBtn = document.getElementById('theme-toggle');

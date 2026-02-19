@@ -87,11 +87,18 @@ const moonIcon = document.querySelector('.moon-icon');
 const body = document.body;
 
 // Check for saved theme
+// Check for saved theme
 const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
+
+// Default to Light Mode unless 'dark' is explicitly set
+if (savedTheme !== 'dark') {
     body.classList.add('light-mode');
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
+    if (sunIcon) sunIcon.style.display = 'none';
+    if (moonIcon) moonIcon.style.display = 'block';
+} else {
+    // Keep Dark Mode (default CSS)
+    if (sunIcon) sunIcon.style.display = 'block';
+    if (moonIcon) moonIcon.style.display = 'none';
 }
 
 if (themeBtn) {

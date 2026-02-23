@@ -68,7 +68,7 @@
                 <p class="booking-subtitle" data-i18n="book-subtitle">Fill in the details below to schedule a service
                     for your farm.</p>
 
-                <form class="booking-form" action="#" method="POST" novalidate>
+                <form class="booking-form" id="bookingForm" onsubmit="event.preventDefault();" novalidate>
                     <div class="form-group">
                         <label for="fullname" data-i18n="lbl-fullname">Full Name</label>
                         <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required

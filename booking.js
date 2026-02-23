@@ -1,4 +1,4 @@
-// Firebase Configuration (Compat)
+// Firebase Configuration (Compat) — Primary: manakrishi-booking (Firestore)
 const firebaseConfig = {
     apiKey: "AIzaSyBy2yNoxRWj0fR5_3zXWZoi7xwrusHBf9U",
     authDomain: "manakrishi-booking.firebaseapp.com",
@@ -9,12 +9,28 @@ const firebaseConfig = {
     measurementId: "G-246CVYV263"
 };
 
+// Secondary: db-vt-gsocp (Realtime Database — for WhatsApp Automator)
+const rtdbConfig = {
+    apiKey: "AIzaSyCznxVw1-MXtsauYiyAA9Jor8SZ3irZO-E",
+    authDomain: "db-vt-gsocp.firebaseapp.com",
+    databaseURL: "https://db-vt-gsocp-default-rtdb.firebaseio.com",
+    projectId: "db-vt-gsocp",
+    storageBucket: "db-vt-gsocp.firebasestorage.app",
+    messagingSenderId: "619171992371",
+    appId: "1:619171992371:web:c3fd02cd0687d26775e446",
+    measurementId: "G-DK2E3PG516"
+};
+
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
+const rtdbApp = firebase.app().name === '[DEFAULT]'
+    ? firebase.initializeApp(rtdbConfig, 'rtdb')
+    : firebase.app('rtdb');
 
 const db = firebase.firestore();
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGHnnn6GiKYCbMgraKofdbhU8ZaVMBav89Y-xKu63OLp5z-y4O1F9eDhGQ4I9Qn9do/exec";
+const rtdb = firebase.database(rtdbApp);
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzOsCSQp1A1KpodJ99-oWT6BOWK7OsnBATcRc5_tUYhpM1BZPgA99WARP8DGRtv3cWP/exec";
 
 document.addEventListener('DOMContentLoaded', () => {
     const bookingForm = document.querySelector('.booking-form');
@@ -139,6 +155,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             await db.collection("bookings").add(formData);
+
+            // Also save to db-vt-gsocp RTDB (for WhatsApp Automator)
+            try {
+                await rtdb.ref('bookings').push({
+                    fullname: formData.fullname,
+                    mobile: formData.mobile,
+                    village: formData.village,
+                    date: formData.date,
+                    crop: formData.crop,
+                    acres: formData.acres,
+                    status: 'new'
+                });
+            } catch (rtdbErr) {
+                console.error("RTDB sync error:", rtdbErr);
+            }
 
             if (GOOGLE_SCRIPT_URL && !GOOGLE_SCRIPT_URL.includes("REPLACE THIS")) {
                 fetch(GOOGLE_SCRIPT_URL, {

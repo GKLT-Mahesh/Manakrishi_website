@@ -300,11 +300,11 @@
 
         /* --- Partners Grid --- */
         .partners-grid {
-            max-width: 1300px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 5% 8rem;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem;
         }
 
@@ -405,33 +405,10 @@
             filter: grayscale(0) brightness(1.08) saturate(1.1);
         }
 
-        /* Karthikeya (Founder) card - slight zoom to frame face better */
+        /* (Founder) card - default layout is sufficient now */
         .partner-bio-card:nth-child(1) .bio-img {
-            transform: scale(1.15);
-            object-position: center 20%;
+            object-position: center 10%;
         }
-
-        .partner-bio-card:nth-child(1):hover .bio-img {
-            transform: scale(1.25);
-            /* Inherits the color bloom from general hover, providing a cohesive look */
-        }
-
-        /* Bakki Mahesh card - dark background photo needs special positioning */
-        .partner-bio-card:nth-child(3) .bio-img-wrapper {
-            background: #0a0a0a;
-        }
-
-        .partner-bio-card:nth-child(3) .bio-img {
-            object-position: center 25%;
-            /* Custom filter for the dark photo: less grayscale, more brightness */
-            filter: grayscale(0.2) brightness(1.1) contrast(1.1);
-        }
-
-        .partner-bio-card:nth-child(3):hover .bio-img {
-            /* Bloom effect specifically tuned for the dark background */
-            filter: grayscale(0) brightness(1.25) contrast(1.15) saturate(1.1);
-        }
-
         /* --- Bio Content --- */
         .bio-content {
             padding: 1.5rem 2rem 2rem;
@@ -697,28 +674,6 @@
                     that Manakrishi's services are delivered with reliability and excellence. He focuses on
                     building strong relationships with farming communities and expanding the company's operational
                     footprint.
-                </p>
-                <div class="bio-social">
-                    <a href="#" class="bio-social-link" aria-label="LinkedIn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- Card 3: Bakki Mahesh -->
-        <div class="partner-bio-card">
-            <div class="bio-img-wrapper">
-                <img src="assets/bakki-mahesh.jpg" alt="Bakki Mahesh" class="bio-img">
-            </div>
-            <div class="bio-content">
-                <span class="bio-role">COO</span>
-                <h2 class="bio-name">Bakki Mahesh</h2>
-                <p class="bio-desc">
-                    The creative force behind Manakrishi's digital presence. He designed the entire website, ensuring
-                    a seamless technology experience for farmers and partners alike.
                 </p>
                 <div class="bio-social">
                     <a href="#" class="bio-social-link" aria-label="LinkedIn">

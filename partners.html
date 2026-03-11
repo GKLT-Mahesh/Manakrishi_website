@@ -405,10 +405,18 @@
             filter: grayscale(0) brightness(1.08) saturate(1.1);
         }
 
-        /* (Founder) card - default layout is sufficient now */
+        /* (Founder) card - zoomed out for better framing */
         .partner-bio-card:nth-child(1) .bio-img {
-            object-position: center 10%;
+            object-fit: contain;
+            object-position: center top;
+            transform: scale(1.25);
         }
+
+        .partner-bio-card:nth-child(1):hover .bio-img {
+            transform: scale(1.35);
+            filter: grayscale(0) brightness(1.08) saturate(1.1);
+        }
+
         /* --- Bio Content --- */
         .bio-content {
             padding: 1.5rem 2rem 2rem;

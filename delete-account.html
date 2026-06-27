@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="delete-title">Delete Account Request | Manakrishi</title>
+    <meta name="description" content="Submit a request to permanently delete your Manakrishi account and associated data.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/manakrishi-logo.png">
+    <link rel="apple-touch-icon" href="assets/manakrishi-logo.png">
+
+    <style>
+        .delete-warning-banner {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        body.light-mode .delete-warning-banner {
+            background: rgba(239, 68, 68, 0.05);
+        }
+
+        .warning-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            margin-top: 2px;
+        }
+
+        .warning-text {
+            color: #ef4444;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+            background-repeat: no-repeat;
+            background-position: right 1.2rem center;
+            background-size: 1.2rem;
+        }
+
+        body.light-mode .form-select {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.08);
+            color: #1a2b1d;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a2b1d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            background-color: rgba(0, 188, 212, 0.05);
+            box-shadow: 0 0 0 4px rgba(0, 188, 212, 0.1);
+        }
+
+        .form-select.error {
+            border-color: #ef4444;
+            background-color: rgba(239, 68, 68, 0.05);
+        }
+
+        .form-select option {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: 1.5rem;
+            cursor: pointer;
+        }
+
+        .checkbox-input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-secondary);
+            cursor: pointer;
+            margin-top: 3px;
+        }
+
+        .checkbox-label {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .submit-btn.danger-btn {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .submit-btn.danger-btn:hover {
+            background: linear-gradient(135deg, #b91c1c, #dc2626);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+        }
+
+        .submit-btn.is-loading::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: calc(50% - 10px);
+            left: calc(50% - 10px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .submit-btn.is-loading .submit-btn-text {
+            visibility: hidden;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        body.light-mode .form-input {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.08);
+            color: #1a2b1d;
+        }
+
+        body.light-mode .form-input::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="booking-header">
+        <nav class="glass-nav booking-nav" id="booking-nav">
+            <div class="glass-nav-brand">
+                <a href="index.html" class="logo" aria-label="Manakrishi Home">
+                    <img src="assets/manakrishi-logo.png" alt="Manakrishi">
+                </a>
+                <span class="booking-nav-badge" data-i18n="footer-delete-account" style="background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); color: #ef4444;">Delete Request</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" data-i18n="nav-home">Home</a>
+                <a href="index.html#about" data-i18n="nav-story">Our Story</a>
+                <a href="index.html#how-it-works" data-i18n="nav-how">How It Works</a>
+            </div>
+            <div class="nav-actions">
+                <button type="button" class="cta-small cta-lang" onclick="toggleLanguage()" id="lang-btn"
+                    aria-label="Toggle language">
+                    <span id="lang-btn-text">తెలుగు</span>
+                </button>
+                <a href="https://wa.me/918886124318" target="_blank" rel="noopener noreferrer"
+                    class="cta-small cta-contact" data-i18n="nav-booking-contact">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Delete Request Form Section -->
+    <section class="booking-section">
+        <div class="booking-container">
+            <div id="booking-wrapper">
+                <h1 class="section-title" data-i18n="delete-header">Delete Account Request</h1>
+                <p class="booking-subtitle" data-i18n="delete-subtitle">Submit a request to permanently delete your Manakrishi account and associated data.</p>
+
+                <!-- Irreversible Warning Banner -->
+                <div class="delete-warning-banner">
+                    <span class="warning-icon">⚠️</span>
+                    <span class="warning-text" data-i18n="delete-warning">Warning: Deleting your account is permanent. All your data, including booking history, field maps, and active schedules, will be permanently removed and cannot be recovered.</span>
+                </div>
+
+                <form class="booking-form" id="deleteForm" onsubmit="event.preventDefault();" novalidate>
+                    <div class="form-group">
+                        <label for="fullname" data-i18n="lbl-fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required
+                            class="form-input" data-i18n="ph-fullname">
+                        <small class="error-msg">Please enter your name</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile" data-i18n="lbl-mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="Enter 10-digit mobile number"
+                            maxlength="10" required class="form-input" data-i18n="ph-mobile">
+                        <small class="error-msg">Please enter a valid 10-digit number</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason" data-i18n="delete-lbl-reason">Reason for deletion</label>
+                        <select id="reason" name="reason" required class="form-select">
+                            <option value="" disabled selected data-i18n="delete-ph-reason">Please tell us why you are deleting your account...</option>
+                            <option value="no_longer_using">No longer using drone service</option>
+                            <option value="privacy_concerns">Privacy concerns</option>
+                            <option value="security_concerns">Account security concerns</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <small class="error-msg">Please select a reason</small>
+                    </div>
+
+                    <div class="form-group" id="otherReasonGroup" style="display: none;">
+                        <label for="otherReason">Details</label>
+                        <input type="text" id="otherReason" name="otherReason" placeholder="Please specify..." class="form-input">
+                        <small class="error-msg">Please enter your details</small>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="confirmDelete" name="confirmDelete" required class="checkbox-input">
+                        <label for="confirmDelete" class="checkbox-label" data-i18n="delete-confirm-chk">I confirm that I want to permanently delete my account and erase all my data.</label>
+                    </div>
+                    <small class="error-msg" id="chkErrorMsg" style="margin-left: 30px;">Please check the confirmation box to proceed.</small>
+
+                    <button type="submit" class="submit-btn danger-btn"><span class="submit-btn-text"
+                            data-i18n="delete-btn-submit">Submit Deletion Request</span></button>
+                </form>
+            </div>
+
+            <!-- Success Message (Hidden by default) -->
+            <div class="booking-success" id="success-message" aria-live="polite">
+                <div class="success-icon" style="background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); color: #ef4444;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h2 class="success-title" data-i18n="delete-success-title" style="color: #ef4444;">Request Submitted Successfully</h2>
+                <p class="success-desc" data-i18n="delete-success-desc">Your account deletion request has been registered. Our support team will process your request and permanently delete your data within 7 business days. You will receive a confirmation message once completed.</p>
+                <div class="success-actions">
+                    <button class="submit-btn" onclick="window.location.href='index.html'" data-i18n="delete-btn-home">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p data-i18n="footer-rights">&copy; 2026 Manakrishi Technologies. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="privacy-policy.html" data-i18n="footer-privacy">Privacy Policy</a>
+                    <a href="delete-account.html" data-i18n="footer-delete-account">Delete Account Request</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="language.js"></script>
+
+    <!-- Firebase SDK (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+
+    <!-- Main Deletion Logic -->
+    <script src="delete-account.js"></script>
+</body>
+
+</html>

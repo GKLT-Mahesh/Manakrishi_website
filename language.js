@@ -127,7 +127,40 @@ const translations = {
         "btn-book-another": "Book Another Service",
         "btn-later": "I will do it later",
         "lbl-date": "Preferred Date",
-        "ph-date": "Select a date"
+        "ph-date": "Select a date",
+
+        "footer-privacy": "Privacy Policy",
+        "footer-terms": "Terms of Service",
+        "footer-cookies": "Cookie Policy",
+        "footer-delete-account": "Delete Account Request",
+
+        "privacy-title": "Privacy Policy | Manakrishi",
+        "privacy-header": "Privacy Policy",
+        "privacy-last-updated": "Last Updated: June 2026",
+        "privacy-intro-title": "1. Introduction",
+        "privacy-intro-text": "Welcome to Manakrishi. We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy or our practices with regards to your personal information, please contact us at gklt@manakrishi.in.",
+        "privacy-collect-title": "2. Information We Collect",
+        "privacy-collect-text": "We collect personal information that you voluntarily provide to us when booking a service or contacting us. This includes your name, mobile number, village/location, crop details, and farm acreage.",
+        "privacy-use-title": "3. How We Use Your Information",
+        "privacy-use-text": "We use personal information collected via our website or application for purposes of scheduling drone spraying operations, communicating with you about bookings, sending updates, and coordinating insurance/government schemes.",
+        "privacy-share-title": "4. Sharing Your Information",
+        "privacy-share-text": "We only share information with your consent, to comply with laws, to provide you with services (like government schemes or post office insurance coordination), or to protect your rights.",
+        "privacy-contact-title": "5. Contact Us",
+        "privacy-contact-text": "If you have questions or comments about this policy, you may email us at gklt@manakrishi.in or contact us via WhatsApp at +91 8886124318.",
+
+        "delete-title": "Delete Account Request | Manakrishi",
+        "delete-header": "Delete Account Request",
+        "delete-subtitle": "Submit a request to permanently delete your Manakrishi account and associated data.",
+        "delete-warning": "Warning: Deleting your account is permanent. All your data, including booking history, field maps, and active schedules, will be permanently removed and cannot be recovered.",
+        "delete-lbl-reason": "Reason for deletion",
+        "delete-ph-reason": "Please tell us why you are deleting your account...",
+        "delete-confirm-chk": "I confirm that I want to permanently delete my account and erase all my data.",
+        "delete-btn-submit": "Submit Deletion Request",
+        "delete-success-title": "Request Submitted Successfully",
+        "delete-success-desc": "Your account deletion request has been registered. Our support team will process your request and permanently delete your data within 7 business days. You will receive a confirmation message once completed.",
+        "delete-btn-home": "Back to Home",
+        "delete-error-chk": "Please check the confirmation box to proceed.",
+        "delete-error-reason": "Please provide a reason for deletion."
     },
     "te": {
         "nav-story": "మా కథ",
@@ -275,7 +308,40 @@ const translations = {
         "btn-book-another": "మరొక సేవను బుక్ చేయండి",
         "btn-later": "నేను తరువాత చేస్తాను",
         "lbl-date": "తేదీ",
-        "ph-date": "తేదీని ఎంచుకోండి"
+        "ph-date": "తేదీని ఎంచుకోండి",
+
+        "footer-privacy": "గోప్యతా విధానం (Privacy Policy)",
+        "footer-terms": "నిబంధనలు (Terms)",
+        "footer-cookies": "కుకీలు (Cookies)",
+        "footer-delete-account": "ఖాతా తొలగింపు అభ్యర్థన (Delete Account)",
+
+        "privacy-title": "గోప్యతా విధానం | మనకృషి",
+        "privacy-header": "గోప్యతా విధానం (Privacy Policy)",
+        "privacy-last-updated": "చివరిగా నవీకరించబడింది: జూన్ 2026",
+        "privacy-intro-title": "1. పరిచయం",
+        "privacy-intro-text": "మనకృషికి స్వాగతం. మీ వ్యక్తిగత సమాచారాన్ని మరియు మీ గోప్యత హక్కును రక్షించడానికి మేము కట్టుబడి ఉన్నాము. మా విధానం లేదా మీ వ్యక్తిగత సమాచారానికి సంబంధించిన పద్ధతుల గురించి మీకు ఏవైనా ప్రశ్నలు లేదా ఆందోళనలు ఉంటే, దయచేసి gklt@manakrishi.in లో మమ్మల్ని సంప్రదించండి.",
+        "privacy-collect-title": "2. మేము సేకరించే సమాచారం",
+        "privacy-collect-text": "మీరు సర్వీస్ బుక్ చేసినప్పుడు లేదా మమ్మల్ని సంప్రదించినప్పుడు మీరు స్వచ్ఛందంగా మాకు అందించే వ్యక్తిగత సమాచారాన్ని మేము సేకరిస్తాము. ఇందులో మీ పేరు, మొబైల్ నంబర్, గ్రామం/స్థానం, పంట వివరాలు మరియు పొలం వైశాల్యం (ఎకరాలు) ఉంటాయి.",
+        "privacy-use-title": "3. మీ సమాచారాన్ని మేము ఎలా ఉపయోగిస్తాము",
+        "privacy-use-text": "డ్రోన్ స్ప్రేయింగ్ పనులను షెడ్యూల్ చేయడం, బుకింగ్‌ల గురించి మీతో కమ్యూనికేట్ చేయడం, అప్‌డేట్‌లను పంపడం మరియు ఇన్సూరెన్స్/ప్రభుత్వ పథకాలను సమన్వయం చేయడం వంటి ప్రయోజనాల కోసం మేము మా వెబ్‌సైట్ లేదా అప్లికేషన్ ద్వారా సేకరించిన వ్యక్తిగత సమాచారాన్ని ఉపయోగిస్తాము.",
+        "privacy-share-title": "4. మీ సమాచారాన్ని పంచుకోవడం",
+        "privacy-share-text": "మేము మీ సమ్మతితో మాత్రమే, చట్టాలకు లోబడి, మీకు సేవలను అందించడానికి (ప్రభుత్వ పథకాలు లేదా పోస్ట్ ఆఫీస్ ఇన్సూరెన్స్ సమన్వయం వంటివి) లేదా మీ హక్కులను రక్షించడానికి మాత్రమే సమాచారాన్ని పంచుకుంటాము.",
+        "privacy-contact-title": "5. మమ్మల్ని సంప్రదించండి",
+        "privacy-contact-text": "ఈ విధానం గురించి మీకు ప్రశ్నలు లేదా వ్యాఖ్యలు ఉంటే, మీరు మాకు gklt@manakrishi.in లో ఇమెయిల్ చేయవచ్చు లేదా +91 8886124318 వద్ద వాట్సాప్ ద్వారా మమ్మల్ని సంప్రదించవచ్చు.",
+
+        "delete-title": "ఖాతా తొలగింపు అభ్యర్థన | మనకృషి",
+        "delete-header": "ఖాతా తొలగింపు అభ్యర్థన",
+        "delete-subtitle": "మీ మనకృషి ఖాతాను మరియు అనుబంధిత డేటాను శాశ్వతంగా తొలగించడానికి అభ్యర్థనను సమర్పించండి.",
+        "delete-warning": "హెచ్చరిక: మీ ఖాతాను తొలగించడం శాశ్వతం. మీ బుకింగ్ చరిత్ర, పొలం మ్యాప్‌లు మరియు సక్రియ షెడ్యూల్‌లతో సహా మీ మొత్తం డేటా శాశ్వతంగా తీసివేయబడుతుంది మరియు తిరిగి పొందలేము.",
+        "delete-lbl-reason": "తొలగింపుకు కారణం",
+        "delete-ph-reason": "దయచేసి మీరు మీ ఖాతాను ఎందుకు తొలగిస్తున్నారో మాకు చెప్పండి...",
+        "delete-confirm-chk": "నేను నా ఖాతాను శాశ్వతంగా తొలగించాలని మరియు నా మొత్తం డేటాను చెరిపివేయాలని ధృవీకరిస్తున్నాను.",
+        "delete-btn-submit": "తొలగింపు అభ్యర్థనను సమర్పించండి",
+        "delete-success-title": "అభ్యర్థన విజయవంతంగా సమర్పించబడింది",
+        "delete-success-desc": "మీ ఖాతా తొలగింపు అభ్యర్థన నమోదు చేయబడింది. మా సహాయక బృందం మీ అభ్యర్థనను ప్రాసెస్ చేస్తుంది మరియు 7 పని దినాలలో మీ డేటాను శాశ్వతంగా తొలగిస్తుంది. పూర్తయిన తర్వాత మీకు ధృవీకరణ సందేశం అందుతుంది.",
+        "delete-btn-home": "తిరిగి హోమ్‌కి",
+        "delete-error-chk": "దయచేసి కొనసాగించడానికి నిర్ధారణ పెట్టెను తనిఖీ చేయండి.",
+        "delete-error-reason": "దయచేసి తొలగింపుకు కారణాన్ని తెలియజేయండి."
     }
 };
 

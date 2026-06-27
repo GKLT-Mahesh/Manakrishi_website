@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="privacy-title">Privacy Policy | Manakrishi</title>
+    <meta name="description" content="Privacy Policy of Manakrishi Technologies. Understand how we protect and process your farm information.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/manakrishi-logo.png">
+    <link rel="apple-touch-icon" href="assets/manakrishi-logo.png">
+
+    <style>
+        /* --- Background Glow Orbs --- */
+        .privacy-bg-container {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .privacy-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            animation: orbFloat 10s ease-in-out infinite alternate;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--color-primary);
+            top: -10%;
+            left: -10%;
+        }
+
+        .orb-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--color-secondary);
+            bottom: 10%;
+            right: -10%;
+            animation-delay: -3s;
+        }
+
+        @keyframes orbFloat {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, 30px) scale(1.1); }
+        }
+
+        /* --- Hero Section --- */
+        .privacy-hero {
+            padding: 140px 5% 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .privacy-hero h1 {
+            font-size: 3rem;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 30%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        body.light-mode .privacy-hero h1 {
+            background: linear-gradient(135deg, #1a2b1d 30%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- Split Layout --- */
+        .privacy-layout {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- Sidebar Navigation --- */
+        .privacy-sidebar {
+            width: 280px;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        body.light-mode .privacy-sidebar {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .privacy-nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .privacy-nav-item a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            border-left: 3px solid transparent;
+        }
+
+        .privacy-nav-item a svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .privacy-nav-item:hover a {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--color-secondary);
+            border-left-color: rgba(0, 188, 212, 0.4);
+            transform: translateX(4px);
+        }
+
+        body.light-mode .privacy-nav-item:hover a {
+            background: rgba(0, 188, 212, 0.05);
+        }
+
+        .privacy-nav-item.active a {
+            background: rgba(0, 188, 212, 0.1);
+            color: var(--color-secondary);
+            border-left-color: var(--color-secondary);
+            box-shadow: inset 0 0 10px rgba(0, 188, 212, 0.05);
+        }
+
+        .privacy-nav-item.active a svg {
+            transform: scale(1.1);
+        }
+
+        /* --- Content Area --- */
+        .privacy-content-view {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .privacy-section-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            scroll-margin-top: 110px;
+        }
+
+        body.light-mode .privacy-section-card {
+            background: #ffffff;
+            border-color: rgba(0, 0, 0, 0.06);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .privacy-section-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 188, 212, 0.08);
+            border-color: rgba(0, 188, 212, 0.2);
+        }
+
+        body.light-mode .privacy-section-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 151, 167, 0.08);
+            border-color: rgba(0, 151, 167, 0.2);
+        }
+
+        .privacy-date {
+            color: var(--color-secondary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .section-header-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.8rem;
+        }
+
+        body.light-mode .section-header-row {
+            border-bottom-color: rgba(0, 0, 0, 0.06);
+        }
+
+        .section-header-row svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: var(--color-secondary);
+            stroke-width: 2;
+        }
+
+        .section-header-row h2 {
+            color: var(--color-text);
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+            margin: 0;
+        }
+
+        .privacy-section-card p {
+            color: var(--color-text-muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+            .privacy-layout {
+                gap: 2rem;
+            }
+            .privacy-sidebar {
+                width: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .privacy-layout {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .privacy-sidebar {
+                width: 100%;
+                position: sticky;
+                top: 80px;
+                z-index: 10;
+                padding: 0.8rem;
+                border-radius: 16px;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .privacy-nav-list {
+                flex-direction: row;
+                gap: 0.6rem;
+            }
+
+            .privacy-nav-item a {
+                padding: 0.6rem 1rem;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+                display: inline-flex;
+            }
+
+            .privacy-nav-item:hover a {
+                transform: none;
+                border-bottom-color: rgba(0, 188, 212, 0.4);
+            }
+
+            .privacy-nav-item.active a {
+                border-bottom-color: var(--color-secondary);
+            }
+
+            .privacy-hero {
+                padding: 100px 5% 20px;
+            }
+
+            .privacy-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .privacy-section-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-header-row h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Glowing Background Orbs -->
+    <div class="privacy-bg-container">
+        <div class="privacy-orb orb-1"></div>
+        <div class="privacy-orb orb-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="booking-header">
+        <nav class="glass-nav booking-nav" id="booking-nav">
+            <div class="glass-nav-brand">
+                <a href="index.html" class="logo" aria-label="Manakrishi Home">
+                    <img src="assets/manakrishi-logo.png" alt="Manakrishi Logo">
+                </a>
+                <span class="booking-nav-badge" data-i18n="footer-privacy" style="background: rgba(0, 188, 212, 0.15); border-color: rgba(0, 188, 212, 0.3); color: var(--color-secondary);">Privacy Policy</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" data-i18n="nav-home">Home</a>
+                <a href="index.html#how-it-works" data-i18n="nav-how">How It Works</a>
+                <a href="https://wa.me/918886124318" target="_blank" data-i18n="nav-booking-contact">Contact Us</a>
+            </div>
+            <div class="nav-actions">
+                <button type="button" class="cta-small cta-lang" onclick="toggleLanguage()" id="lang-btn"
+                    aria-label="Toggle language">
+                    <span id="lang-btn-text">తెలుగు</span>
+                </button>
+                <button class="cta-small" onclick="window.location.href='booking.html'" data-i18n="hero-cta-book">Book Service</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Header -->
+    <header class="privacy-hero">
+        <h1 data-i18n="privacy-header">Privacy Policy</h1>
+    </header>
+
+    <!-- Split Main Layout -->
+    <div class="privacy-layout">
+        <!-- Interactive Sidebar Index -->
+        <aside class="privacy-sidebar">
+            <ul class="privacy-nav-list">
+                <li class="privacy-nav-item active" id="nav-item-intro">
+                    <a href="#section-intro">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg>
+                        <span data-i18n="privacy-intro-title">1. Introduction</span>
+                    </a>
+                </li>
+                <li class="privacy-nav-item" id="nav-item-collect">
+                    <a href="#section-collect">
+                        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/></svg>
+                        <span data-i18n="privacy-collect-title">2. Information</span>
+                    </a>
+                </li>
+                <li class="privacy-nav-item" id="nav-item-use">
+                    <a href="#section-use">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        <span data-i18n="privacy-use-title">3. How We Use</span>
+                    </a>
+                </li>
+                <li class="privacy-nav-item" id="nav-item-share">
+                    <a href="#section-share">
+                        <svg viewBox="0 0 24 24"><path d="M18 8A3 3 0 1 0 15 5a3 3 0 0 0 3 3zM6 15a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm12 4a3 3 0 1 0 3-3 3 3 0 0 0-3 3z"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        <span data-i18n="privacy-share-title">4. Sharing Data</span>
+                    </a>
+                </li>
+                <li class="privacy-nav-item" id="nav-item-contact">
+                    <a href="#section-contact">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span data-i18n="privacy-contact-title">5. Contact Us</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="privacy-content-view">
+            <span class="privacy-date" data-i18n="privacy-last-updated">Last Updated: June 2026</span>
+
+            <section class="privacy-section-card" id="section-intro">
+                <div class="section-header-row">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg>
+                    <h2 data-i18n="privacy-intro-title">1. Introduction</h2>
+                </div>
+                <p data-i18n="privacy-intro-text">Welcome to Manakrishi. We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy or our practices with regards to your personal information, please contact us at gklt@manakrishi.in.</p>
+            </section>
+
+            <section class="privacy-section-card" id="section-collect">
+                <div class="section-header-row">
+                    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/></svg>
+                    <h2 data-i18n="privacy-collect-title">2. Information We Collect</h2>
+                </div>
+                <p data-i18n="privacy-collect-text">We collect personal information that you voluntarily provide to us when booking a service or contacting us. This includes your name, mobile number, village/location, crop details, and farm acreage.</p>
+            </section>
+
+            <section class="privacy-section-card" id="section-use">
+                <div class="section-header-row">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    <h2 data-i18n="privacy-use-title">3. How We Use Your Information</h2>
+                </div>
+                <p data-i18n="privacy-use-text">We use personal information collected via our website or application for purposes of scheduling drone spraying operations, communicating with you about bookings, sending updates, and coordinating insurance/government schemes.</p>
+            </section>
+
+            <section class="privacy-section-card" id="section-share">
+                <div class="section-header-row">
+                    <svg viewBox="0 0 24 24"><path d="M18 8A3 3 0 1 0 15 5a3 3 0 0 0 3 3zM6 15a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm12 4a3 3 0 1 0 3-3 3 3 0 0 0-3 3z"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    <h2 data-i18n="privacy-share-title">4. Sharing Your Information</h2>
+                </div>
+                <p data-i18n="privacy-share-text">We only share information with your consent, to comply with laws, to provide you with services (like government schemes or post office insurance coordination), or to protect your rights.</p>
+            </section>
+
+            <section class="privacy-section-card" id="section-contact">
+                <div class="section-header-row">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <h2 data-i18n="privacy-contact-title">5. Contact Us</h2>
+                </div>
+                <p data-i18n="privacy-contact-text">If you have questions or comments about this policy, you may email us at gklt@manakrishi.in or contact us via WhatsApp at +91 8886124318.</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p data-i18n="footer-rights">&copy; 2026 Manakrishi Technologies. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="privacy-policy.html" data-i18n="footer-privacy">Privacy Policy</a>
+                    <a href="delete-account.html" data-i18n="footer-delete-account">Delete Account Request</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle and WhatsApp Float Buttons -->
+    <div class="floating-quick-links">
+        <button id="theme-toggle" class="theme-btn-float" aria-label="Toggle Theme" title="Toggle Theme">
+            <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+        <a href="https://wa.me/918886124318" target="_blank" class="quick-link-btn" title="Chat on WhatsApp">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                </svg>
+            </div>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="language.js"></script>
+    <script src="script.js"></script>
+
+    <!-- ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.privacy-section-card');
+            const navItems = document.querySelectorAll('.privacy-nav-item');
+
+            // ScrollSpy Intersection Observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -60% 0px', // focused view area
+                threshold: 0
+            };
+
+            const observerCallback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const activeId = entry.target.getAttribute('id');
+                        
+                        // Clear active states
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                        });
+
+                        // Set active state on match
+                        const matchItem = document.querySelector(`.privacy-nav-item a[href="#${activeId}"]`);
+                        if (matchItem) {
+                            matchItem.closest('.privacy-nav-item').classList.add('active');
+                            
+                            // Auto horizontal scroll on mobile devices
+                            if (window.innerWidth <= 768) {
+                                const sidebar = document.querySelector('.privacy-sidebar');
+                                const activeElement = matchItem.closest('.privacy-nav-item');
+                                if (sidebar && activeElement) {
+                                    const offsetLeft = activeElement.offsetLeft - (sidebar.clientWidth / 2) + (activeElement.clientWidth / 2);
+                                    sidebar.scrollTo({
+                                        left: offsetLeft,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            sections.forEach(section => observer.observe(section));
+
+            // Smooth Scroll on Sidebar Link Clicks
+            const links = document.querySelectorAll('.privacy-nav-item a');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const offset = window.innerWidth <= 768 ? 160 : 110;
+                        const top = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({
+                            top: top,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
